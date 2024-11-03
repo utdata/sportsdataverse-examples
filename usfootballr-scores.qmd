@@ -1,0 +1,42 @@
+---
+title: "US Football scores"
+---
+
+Most of [usfootballR](https://usfootballr.sportsdataverse.org/reference/index.html) does not work.
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(janitor)
+library(usfootballR)
+```
+
+
+
+```{r}
+try(load_mls_schedule(2022))
+```
+
+```{r}
+try(load_mls_team_box(2022))
+```
+
+### NWSL
+
+```{r}
+try(load_nwsl_schedule(2021))
+```
+
+## Espn
+
+```{r}
+try(espn_mls_teams())
+```
+
+```{r}
+try(espn_mls_scoreboard (season = "20200829"))
+```
+

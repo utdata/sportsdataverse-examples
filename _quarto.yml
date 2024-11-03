@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Sports Dataverse Examples"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - href: index.qmd
+        text: Home
+      - baseballr.qmd
+      - worldfootballr-fbref-teamstats.qmd
+      - worldfootballr-fbref-scores.qmd
+  repo-url: https://github.com/utdata/sportsdataverse-examples
+  repo-actions: [source, issue]
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

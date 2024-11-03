@@ -1,0 +1,127 @@
+---
+title: "FBRef team stats"
+---
+
+Exploring the [worldfootballR](https://jaseziv.github.io/worldfootballR/index.html) package where you can get soccer stats from FBref.com and more.
+
+Here we are trying to get goals by team for a season, which are in the standard season ending team stats.
+
+## Install the packages
+
+If you don't already have the devtools and worldfootballR packages, uncomment the code below to install them. HOWEVER, recomment after you've done so. You only have to install the packages ONE TIME.
+
+```{r}
+# install.packages("devtools")
+# devtools::install_github("JaseZiv/worldfootballR")
+```
+
+
+## Setup
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(janitor)
+library(worldfootballR)
+```
+
+
+## Basic use
+
+An attempt to learn how to do certain things.
+
+This gets the URL for specific leagues and years.
+
+The function is described here: [fb_league_urls()](https://jaseziv.github.io/worldfootballR/reference/fb_league_urls.html)
+
+```{r}
+fb_league_urls(country = "ENG", gender = "M", season_end_year = 2021, tier = '1st')
+```
+
+Which then lets you get team urls:
+
+This function is described here. [fb_teams_urls()](https://jaseziv.github.io/worldfootballR/reference/fb_teams_urls.html)
+
+```{r}
+fb_teams_urls("https://fbref.com/en/comps/9/Premier-League-Stats")
+```
+
+## Looking for goals
+
+A goal for a student was to find how many goal teams scored throughout seasons to see if there are generally more.
+
+### Big 5 Leagues
+
+Exploring functions that will get goals by team each season.
+
+This gets "standard" team stats from all big 5 European leagues using [fb_big5_advanced_season_stats()](https://jaseziv.github.io/worldfootballR/reference/fb_big5_advanced_season_stats.html)
+
+```{r}
+big5_stand_21 <- fb_big5_advanced_season_stats(
+  season_end_year=2021,
+  stat_type="standard",
+  team_or_player="team",
+  time_pause = 3) |>
+  clean_names()
+
+big5_stand_21 |> glimpse()
+
+big5_stand_21 |> write_rds("data-raw/fbref-team-stats/big5_stand_2021.rds")
+```
+
+My suggestion would be to save the above table as a .rds file to a computer so you don't have to hit the website everytime you work with it.
+
+That big5 could then then be filtered to a specific league.
+
+```{r}
+big5_stand_21 |> filter(comp == "Premier League") |> filter(team_or_opponent == "team")
+
+```
+
+#### Functionalize this
+
+There idea is I could take what is above and turn it into a function and swap out the years.
+
+```{r}
+# you could update the start, end year here
+# I would not do more than maybe 5 years at a time
+yrs <- 2020:2022
+
+scrape_big5 <- function(yr) {
+  fb_big5_advanced_season_stats(
+  season_end_year=yr,
+  stat_type="standard",
+  team_or_player="team",
+  time_pause = 3) |>
+  clean_names()
+}
+
+for (i in yrs) {
+  big5_stand <- scrape_big5(i)
+  big5_stand |> write_rds(paste0("data-raw/fbref-team-stats/big5_stand_", i, ".rds"))
+}
+```
+
+
+### Specific league
+
+This is same as big_5 but for specific leagues. Here we get Premier League. using [fb_season_team_stats()](https://jaseziv.github.io/worldfootballR/reference/fb_season_team_stats.html).
+
+```{r}
+fb_season_team_stats("ENG", "M", 2021, "1st", "standard", time_pause = 3)
+```
+
+Again, this could be turned into a function and sent through a range of years if you just wanted one league. Just like the one above.
+
+### Goal logs
+
+Interesting information about goals. This function is described here: [fb_team_goal_logs()](https://jaseziv.github.io/worldfootballR/reference/fb_team_goal_logs.html). What I don't know is how to get different years.
+
+```{r}
+team_urls <- c("https://fbref.com/en/squads/b8fd03ef/Manchester-City-Stats", "https://fbref.com/en/squads/822bd0ba/Liverpool-Stats")
+
+fb_team_goal_logs(team_urls = team_urls, for_or_against = "for", time_pause = 3)
+```

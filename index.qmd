@@ -1,0 +1,23 @@
+---
+title: "Sports Dataverse Examples"
+---
+
+An increasing number of students are interested in sports data, so I want to learn more about different R packages that help gather that data.
+
+Some of these are within the [Sports Dataverse](https://www.sportsdataverse.org/packages), but I'm also finding that some of those packages do not work.
+
+> See the site navigation for the different examples I have.
+
+Some I've had some success with:
+
+- [worldfootballR](https://jaseziv.github.io/worldfootballR/) for world soccer.
+- [baseballR](https://billpetti.github.io/baseballr/) for baseball.
+
+Some I've seen work in the past but I haven't used recently:
+
+- [recruitR](https://recruitr.sportsdataverse.org/) for college sports recruits.
+- [cfbfastR](https://cfbfastr.sportsdataverse.org/) for college football stats. Requires an API key.
+
+Some that have NOT worked:
+
+- [usfootballR](https://usfootballr.sportsdataverse.org/) but that information seems to be available in [worldfootballR](https://jaseziv.github.io/worldfootballR/)

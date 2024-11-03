@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.542">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sports Dataverse Examples - FBRef team stats</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./worldfootballr-fbref-teamstats.html">FBRef team stats</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Sports Dataverse Examples</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./baseballr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BaseballR</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./worldfootballr-fbref-teamstats.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">FBRef team stats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./worldfootballr-fbref-scores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FBref scores &amp; schedules</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#install-the-packages" id="toc-install-the-packages" class="nav-link active" data-scroll-target="#install-the-packages">Install the packages</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#basic-use" id="toc-basic-use" class="nav-link" data-scroll-target="#basic-use">Basic use</a></li>
+  <li><a href="#looking-for-goals" id="toc-looking-for-goals" class="nav-link" data-scroll-target="#looking-for-goals">Looking for goals</a>
+  <ul class="collapse">
+  <li><a href="#big-5-leagues" id="toc-big-5-leagues" class="nav-link" data-scroll-target="#big-5-leagues">Big 5 Leagues</a></li>
+  <li><a href="#specific-league" id="toc-specific-league" class="nav-link" data-scroll-target="#specific-league">Specific league</a></li>
+  <li><a href="#goal-logs" id="toc-goal-logs" class="nav-link" data-scroll-target="#goal-logs">Goal logs</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/utdata/sportsdataverse-examples/blob/main/worldfootballr-fbref-teamstats.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/utdata/sportsdataverse-examples/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">FBRef team stats</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Exploring the <a href="https://jaseziv.github.io/worldfootballR/index.html">worldfootballR</a> package where you can get soccer stats from FBref.com and more.</p>
+<p>Here we are trying to get goals by team for a season, which are in the standard season ending team stats.</p>
+<section id="install-the-packages" class="level2">
+<h2 class="anchored" data-anchor-id="install-the-packages">Install the packages</h2>
+<p>If you don’t already have the devtools and worldfootballR packages, uncomment the code below to install them. HOWEVER, recomment after you’ve done so. You only have to install the packages ONE TIME.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github("JaseZiv/worldfootballR")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(worldfootballR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="basic-use" class="level2">
+<h2 class="anchored" data-anchor-id="basic-use">Basic use</h2>
+<p>An attempt to learn how to do certain things.</p>
+<p>This gets the URL for specific leagues and years.</p>
+<p>The function is described here: <a href="https://jaseziv.github.io/worldfootballR/reference/fb_league_urls.html">fb_league_urls()</a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fb_league_urls</span>(<span class="at">country =</span> <span class="st">"ENG"</span>, <span class="at">gender =</span> <span class="st">"M"</span>, <span class="at">season_end_year =</span> <span class="dv">2021</span>, <span class="at">tier =</span> <span class="st">'1st'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "https://fbref.com/en/comps/9/2020-2021/2020-2021-Premier-League-Stats"</code></pre>
+</div>
+</div>
+<p>Which then lets you get team urls:</p>
+<p>This function is described here. <a href="https://jaseziv.github.io/worldfootballR/reference/fb_teams_urls.html">fb_teams_urls()</a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fb_teams_urls</span>(<span class="st">"https://fbref.com/en/comps/9/Premier-League-Stats"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "https://fbref.com/en/squads/b8fd03ef/Manchester-City-Stats"         
+ [2] "https://fbref.com/en/squads/822bd0ba/Liverpool-Stats"               
+ [3] "https://fbref.com/en/squads/18bb7c10/Arsenal-Stats"                 
+ [4] "https://fbref.com/en/squads/8602292d/Aston-Villa-Stats"             
+ [5] "https://fbref.com/en/squads/cff3d9bb/Chelsea-Stats"                 
+ [6] "https://fbref.com/en/squads/d07537b9/Brighton-and-Hove-Albion-Stats"
+ [7] "https://fbref.com/en/squads/e4a775cb/Nottingham-Forest-Stats"       
+ [8] "https://fbref.com/en/squads/361ca564/Tottenham-Hotspur-Stats"       
+ [9] "https://fbref.com/en/squads/cd051869/Brentford-Stats"               
+[10] "https://fbref.com/en/squads/fd962109/Fulham-Stats"                  
+[11] "https://fbref.com/en/squads/4ba7cbea/Bournemouth-Stats"             
+[12] "https://fbref.com/en/squads/b2b47a98/Newcastle-United-Stats"        
+[13] "https://fbref.com/en/squads/7c21e445/West-Ham-United-Stats"         
+[14] "https://fbref.com/en/squads/19538871/Manchester-United-Stats"       
+[15] "https://fbref.com/en/squads/a2d435b3/Leicester-City-Stats"          
+[16] "https://fbref.com/en/squads/d3fd31cc/Everton-Stats"                 
+[17] "https://fbref.com/en/squads/47c64c55/Crystal-Palace-Stats"          
+[18] "https://fbref.com/en/squads/b74092de/Ipswich-Town-Stats"            
+[19] "https://fbref.com/en/squads/8cec06e1/Wolverhampton-Wanderers-Stats" 
+[20] "https://fbref.com/en/squads/33c895d4/Southampton-Stats"             </code></pre>
+</div>
+</div>
+</section>
+<section id="looking-for-goals" class="level2">
+<h2 class="anchored" data-anchor-id="looking-for-goals">Looking for goals</h2>
+<p>A goal for a student was to find how many goal teams scored throughout seasons to see if there are generally more.</p>
+<section id="big-5-leagues" class="level3">
+<h3 class="anchored" data-anchor-id="big-5-leagues">Big 5 Leagues</h3>
+<p>Exploring functions that will get goals by team each season.</p>
+<p>This gets “standard” team stats from all big 5 European leagues using <a href="https://jaseziv.github.io/worldfootballR/reference/fb_big5_advanced_season_stats.html">fb_big5_advanced_season_stats()</a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>big5_stand_21 <span class="ot">&lt;-</span> <span class="fu">fb_big5_advanced_season_stats</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">season_end_year=</span><span class="dv">2021</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">stat_type=</span><span class="st">"standard"</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">team_or_player=</span><span class="st">"team"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">time_pause =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>big5_stand_21 <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 196
+Columns: 36
+$ season_end_year     &lt;int&gt; 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, 20…
+$ squad               &lt;chr&gt; "Alavés", "Alavés", "Angers", "Angers", "Arminia",…
+$ comp                &lt;chr&gt; "La Liga", "La Liga", "Ligue 1", "Ligue 1", "Bunde…
+$ team_or_opponent    &lt;chr&gt; "team", "opponent", "team", "opponent", "team", "o…
+$ num_players         &lt;dbl&gt; 30, 30, 31, 31, 26, 26, 29, 29, 24, 24, 30, 30, 27…
+$ age                 &lt;dbl&gt; 28.7, 27.5, 27.9, 26.0, 26.0, 25.9, 25.9, 26.7, 25…
+$ poss                &lt;dbl&gt; 42.8, 57.3, 46.4, 53.8, 42.3, 57.8, 53.5, 46.2, 48…
+$ mp_playing          &lt;dbl&gt; 38, 38, 38, 38, 34, 34, 38, 38, 38, 38, 38, 38, 38…
+$ starts_playing      &lt;dbl&gt; 418, 418, 418, 418, 374, 374, 418, 418, 418, 418, …
+$ min_playing         &lt;dbl&gt; 3420, 3420, 3420, 3420, 3060, 3060, 3420, 3420, 34…
+$ mins_per_90_playing &lt;dbl&gt; 38, 38, 38, 38, 34, 34, 38, 38, 38, 38, 38, 38, 38…
+$ gls                 &lt;dbl&gt; 35, 57, 40, 57, 23, 51, 53, 35, 52, 45, 90, 46, 43…
+$ ast                 &lt;dbl&gt; 21, 44, 23, 41, 16, 36, 38, 25, 38, 30, 65, 36, 31…
+$ g_a                 &lt;dbl&gt; 56, 101, 63, 98, 39, 87, 91, 60, 90, 75, 155, 82, …
+$ g_minus_pk          &lt;dbl&gt; 30, 54, 35, 50, 22, 46, 47, 33, 47, 40, 84, 41, 39…
+$ pk                  &lt;dbl&gt; 5, 3, 5, 7, 1, 5, 6, 2, 5, 5, 6, 5, 4, 5, 5, 1, 2,…
+$ p_katt              &lt;dbl&gt; 8, 3, 6, 8, 2, 6, 6, 3, 6, 6, 7, 8, 5, 6, 7, 4, 5,…
+$ crd_y               &lt;dbl&gt; 96, 80, 65, 73, 52, 63, 49, 74, 71, 73, 67, 87, 82…
+$ crd_r               &lt;dbl&gt; 8, 3, 2, 3, 1, 2, 5, 2, 4, 7, 3, 4, 3, 5, 0, 3, 4,…
+$ x_g_expected        &lt;dbl&gt; 42.6, 49.9, 41.6, 52.3, 32.9, 56.8, 51.7, 43.0, 52…
+$ npx_g_expected      &lt;dbl&gt; 36.4, 47.5, 36.9, 46.6, 31.3, 52.1, 47.0, 40.6, 47…
+$ x_ag_expected       &lt;dbl&gt; 27.4, 37.1, 26.4, 36.8, 23.9, 40.6, 35.1, 31.8, 37…
+$ npx_g_x_ag_expected &lt;dbl&gt; 63.7, 84.7, 63.3, 83.4, 55.2, 92.7, 82.1, 72.4, 85…
+$ prg_c_progression   &lt;dbl&gt; 404, 631, 614, 731, 358, 597, 758, 604, 629, 726, …
+$ prg_p_progression   &lt;dbl&gt; 938, 1477, 1435, 1639, 880, 1706, 1760, 1175, 1420…
+$ gls_per             &lt;dbl&gt; 0.92, 1.50, 1.05, 1.50, 0.68, 1.50, 1.39, 0.92, 1.…
+$ ast_per             &lt;dbl&gt; 0.55, 1.16, 0.61, 1.08, 0.47, 1.06, 1.00, 0.66, 1.…
+$ g_a_per             &lt;dbl&gt; 1.47, 2.66, 1.66, 2.58, 1.15, 2.56, 2.39, 1.58, 2.…
+$ g_minus_pk_per      &lt;dbl&gt; 0.79, 1.42, 0.92, 1.32, 0.65, 1.35, 1.24, 0.87, 1.…
+$ g_a_minus_pk_per    &lt;dbl&gt; 1.34, 2.58, 1.53, 2.39, 1.12, 2.41, 2.24, 1.53, 2.…
+$ x_g_per             &lt;dbl&gt; 1.12, 1.31, 1.10, 1.38, 0.97, 1.67, 1.36, 1.13, 1.…
+$ x_ag_per            &lt;dbl&gt; 0.72, 0.98, 0.70, 0.97, 0.70, 1.19, 0.92, 0.84, 0.…
+$ x_g_x_ag_per        &lt;dbl&gt; 1.84, 2.29, 1.79, 2.34, 1.67, 2.86, 2.29, 1.97, 2.…
+$ npx_g_per           &lt;dbl&gt; 0.96, 1.25, 0.97, 1.23, 0.92, 1.53, 1.24, 1.07, 1.…
+$ npx_g_x_ag_per      &lt;dbl&gt; 1.68, 2.23, 1.67, 2.19, 1.62, 2.73, 2.16, 1.91, 2.…
+$ url                 &lt;chr&gt; "https://fbref.com/en/squads/8d6fd021/2020-2021/Al…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>big5_stand_21 <span class="sc">|&gt;</span> <span class="fu">write_rds</span>(<span class="st">"data-raw/fbref-team-stats/big5_stand_2021.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>My suggestion would be to save the above table as a .rds file to a computer so you don’t have to hit the website everytime you work with it.</p>
+<p>That big5 could then then be filtered to a specific league.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>big5_stand_21 <span class="sc">|&gt;</span> <span class="fu">filter</span>(comp <span class="sc">==</span> <span class="st">"Premier League"</span>) <span class="sc">|&gt;</span> <span class="fu">filter</span>(team_or_opponent <span class="sc">==</span> <span class="st">"team"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   season_end_year           squad           comp team_or_opponent num_players
+1             2021         Arsenal Premier League             team          29
+2             2021     Aston Villa Premier League             team          24
+3             2021        Brighton Premier League             team          27
+4             2021         Burnley Premier League             team          25
+5             2021         Chelsea Premier League             team          27
+6             2021  Crystal Palace Premier League             team          24
+7             2021         Everton Premier League             team          29
+8             2021          Fulham Premier League             team          28
+9             2021    Leeds United Premier League             team          23
+10            2021  Leicester City Premier League             team          27
+11            2021       Liverpool Premier League             team          28
+12            2021 Manchester City Premier League             team          24
+13            2021  Manchester Utd Premier League             team          29
+14            2021   Newcastle Utd Premier League             team          27
+15            2021   Sheffield Utd Premier League             team          27
+16            2021     Southampton Premier League             team          29
+17            2021       Tottenham Premier League             team          24
+18            2021       West Brom Premier League             team          30
+19            2021        West Ham Premier League             team          24
+20            2021          Wolves Premier League             team          27
+    age poss mp_playing starts_playing min_playing mins_per_90_playing gls ast
+1  25.9 53.5         38            418        3420                  38  53  38
+2  25.2 48.5         38            418        3420                  38  52  38
+3  25.8 51.1         38            418        3420                  38  39  24
+4  28.3 42.1         38            418        3420                  38  32  20
+5  26.0 60.9         38            418        3420                  38  56  38
+6  29.1 40.6         38            418        3420                  38  39  29
+7  26.3 46.4         38            418        3420                  38  45  32
+8  25.2 49.7         38            418        3420                  38  26  18
+9  26.1 57.3         38            418        3420                  38  60  45
+10 26.5 54.3         38            418        3420                  38  64  45
+11 26.8 62.1         38            418        3420                  38  65  43
+12 26.1 63.5         38            418        3420                  38  82  55
+13 25.6 55.7         38            418        3420                  38  70  51
+14 27.1 38.8         38            418        3420                  38  44  26
+15 26.7 41.7         38            418        3420                  38  19  13
+16 26.6 52.0         38            418        3420                  38  47  33
+17 27.2 51.6         38            418        3420                  38  66  50
+18 26.4 37.9         38            418        3420                  38  33  20
+19 27.8 43.2         38            418        3420                  38  60  46
+20 26.3 49.3         38            418        3420                  38  34  21
+   g_a g_minus_pk pk p_katt crd_y crd_r x_g_expected npx_g_expected
+1   91         47  6      6    49     5         51.7           47.0
+2   90         47  5      6    71     4         52.5           47.9
+3   63         33  6      9    49     6         50.9           43.8
+4   52         29  3      3    48     0         39.3           36.9
+5   94         48  8     10    51     3         62.4           54.5
+6   68         36  3      4    56     2         34.1           31.0
+7   77         41  4      5    59     2         45.7           41.9
+8   44         23  3      6    67     3         40.5           35.9
+9  105         56  4      4    61     1         55.6           52.5
+10 109         54 10     12    61     0         55.8           46.3
+11 108         59  6      6    40     0         67.5           62.9
+12 137         77  5      9    46     2         68.2           61.2
+13 121         60 10     11    64     1         60.1           51.4
+14  70         38  6      7    65     3         43.4           37.8
+15  32         16  3      4    73     3         32.6           29.5
+16  80         42  5      6    52     3         41.2           36.6
+17 116         61  5      5    57     2         53.1           49.2
+18  53         29  4      4    51     4         35.8           32.7
+19 106         58  2      4    50     3         55.4           52.1
+20  55         30  4      4    55     1         36.5           33.4
+   x_ag_expected npx_g_x_ag_expected prg_c_progression prg_p_progression
+1           35.1                82.1               758              1760
+2           37.4                85.3               629              1420
+3           33.2                77.0               685              1516
+4           27.7                64.6               389              1012
+5           41.5                96.0               895              1798
+6           23.6                54.6               526              1132
+7           30.7                72.6               604              1184
+8           26.3                62.2               727              1354
+9           41.9                94.3               811              1633
+10          33.7                80.1               666              1464
+11          48.3               111.2               886              2057
+12          45.4               106.6              1096              2051
+13          41.6                93.1               877              1832
+14          29.0                66.8               467               903
+15          24.9                54.4               491              1196
+16          25.8                62.5               626              1195
+17          35.3                84.4               633              1330
+18          24.4                57.1               441              1027
+19          39.6                91.7               658              1282
+20          24.1                57.6               800              1283
+   gls_per ast_per g_a_per g_minus_pk_per g_a_minus_pk_per x_g_per x_ag_per
+1     1.39    1.00    2.39           1.24             2.24    1.36     0.92
+2     1.37    1.00    2.37           1.24             2.24    1.38     0.98
+3     1.03    0.63    1.66           0.87             1.50    1.34     0.87
+4     0.84    0.53    1.37           0.76             1.29    1.03     0.73
+5     1.47    1.00    2.47           1.26             2.26    1.64     1.09
+6     1.03    0.76    1.79           0.95             1.71    0.90     0.62
+7     1.18    0.84    2.03           1.08             1.92    1.20     0.81
+8     0.68    0.47    1.16           0.61             1.08    1.07     0.69
+9     1.58    1.18    2.76           1.47             2.66    1.46     1.10
+10    1.68    1.18    2.87           1.42             2.61    1.47     0.89
+11    1.71    1.13    2.84           1.55             2.68    1.78     1.27
+12    2.16    1.45    3.61           2.03             3.47    1.80     1.19
+13    1.84    1.34    3.18           1.58             2.92    1.58     1.10
+14    1.16    0.68    1.84           1.00             1.68    1.14     0.76
+15    0.50    0.34    0.84           0.42             0.76    0.86     0.66
+16    1.24    0.87    2.11           1.11             1.97    1.09     0.68
+17    1.74    1.32    3.05           1.61             2.92    1.40     0.93
+18    0.87    0.53    1.39           0.76             1.29    0.94     0.64
+19    1.58    1.21    2.79           1.53             2.74    1.46     1.04
+20    0.89    0.55    1.45           0.79             1.34    0.96     0.63
+   x_g_x_ag_per npx_g_per npx_g_x_ag_per
+1          2.29      1.24           2.16
+2          2.37      1.26           2.25
+3          2.21      1.15           2.03
+4          1.76      0.97           1.70
+5          2.73      1.43           2.53
+6          1.52      0.82           1.44
+7          2.01      1.10           1.91
+8          1.76      0.95           1.64
+9          2.57      1.38           2.48
+10         2.36      1.22           2.11
+11         3.05      1.66           2.93
+12         2.99      1.61           2.81
+13         2.68      1.35           2.45
+14         1.91      1.00           1.76
+15         1.52      0.78           1.43
+16         1.77      0.96           1.64
+17         2.33      1.29           2.22
+18         1.59      0.86           1.50
+19         2.50      1.37           2.41
+20         1.60      0.88           1.51
+                                                                             url
+1                   https://fbref.com/en/squads/18bb7c10/2020-2021/Arsenal-Stats
+2               https://fbref.com/en/squads/8602292d/2020-2021/Aston-Villa-Stats
+3  https://fbref.com/en/squads/d07537b9/2020-2021/Brighton-and-Hove-Albion-Stats
+4                   https://fbref.com/en/squads/943e8050/2020-2021/Burnley-Stats
+5                   https://fbref.com/en/squads/cff3d9bb/2020-2021/Chelsea-Stats
+6            https://fbref.com/en/squads/47c64c55/2020-2021/Crystal-Palace-Stats
+7                   https://fbref.com/en/squads/d3fd31cc/2020-2021/Everton-Stats
+8                    https://fbref.com/en/squads/fd962109/2020-2021/Fulham-Stats
+9              https://fbref.com/en/squads/5bfb9659/2020-2021/Leeds-United-Stats
+10           https://fbref.com/en/squads/a2d435b3/2020-2021/Leicester-City-Stats
+11                https://fbref.com/en/squads/822bd0ba/2020-2021/Liverpool-Stats
+12          https://fbref.com/en/squads/b8fd03ef/2020-2021/Manchester-City-Stats
+13        https://fbref.com/en/squads/19538871/2020-2021/Manchester-United-Stats
+14         https://fbref.com/en/squads/b2b47a98/2020-2021/Newcastle-United-Stats
+15         https://fbref.com/en/squads/1df6b87e/2020-2021/Sheffield-United-Stats
+16              https://fbref.com/en/squads/33c895d4/2020-2021/Southampton-Stats
+17        https://fbref.com/en/squads/361ca564/2020-2021/Tottenham-Hotspur-Stats
+18     https://fbref.com/en/squads/60c6b05f/2020-2021/West-Bromwich-Albion-Stats
+19          https://fbref.com/en/squads/7c21e445/2020-2021/West-Ham-United-Stats
+20  https://fbref.com/en/squads/8cec06e1/2020-2021/Wolverhampton-Wanderers-Stats</code></pre>
+</div>
+</div>
+<section id="functionalize-this" class="level4">
+<h4 class="anchored" data-anchor-id="functionalize-this">Functionalize this</h4>
+<p>There idea is I could take what is above and turn it into a function and swap out the years.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># you could update the start, end year here</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># I would not do more than maybe 5 years at a time</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>yrs <span class="ot">&lt;-</span> <span class="dv">2020</span><span class="sc">:</span><span class="dv">2022</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>scrape_big5 <span class="ot">&lt;-</span> <span class="cf">function</span>(yr) {</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fb_big5_advanced_season_stats</span>(</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">season_end_year=</span>yr,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">stat_type=</span><span class="st">"standard"</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">team_or_player=</span><span class="st">"team"</span>,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">time_pause =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> yrs) {</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  big5_stand <span class="ot">&lt;-</span> <span class="fu">scrape_big5</span>(i)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  big5_stand <span class="sc">|&gt;</span> <span class="fu">write_rds</span>(<span class="fu">paste0</span>(<span class="st">"data-raw/fbref-team-stats/big5_stand_"</span>, i, <span class="st">".rds"</span>))</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="specific-league" class="level3">
+<h3 class="anchored" data-anchor-id="specific-league">Specific league</h3>
+<p>This is same as big_5 but for specific leagues. Here we get Premier League. using <a href="https://jaseziv.github.io/worldfootballR/reference/fb_season_team_stats.html">fb_season_team_stats()</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fb_season_team_stats</span>(<span class="st">"ENG"</span>, <span class="st">"M"</span>, <span class="dv">2021</span>, <span class="st">"1st"</span>, <span class="st">"standard"</span>, <span class="at">time_pause =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Competition_Name Gender Country Season_End_Year              Squad
+1    Premier League      M     ENG            2021            Arsenal
+2    Premier League      M     ENG            2021        Aston Villa
+3    Premier League      M     ENG            2021           Brighton
+4    Premier League      M     ENG            2021            Burnley
+5    Premier League      M     ENG            2021            Chelsea
+6    Premier League      M     ENG            2021     Crystal Palace
+7    Premier League      M     ENG            2021            Everton
+8    Premier League      M     ENG            2021             Fulham
+9    Premier League      M     ENG            2021       Leeds United
+10   Premier League      M     ENG            2021     Leicester City
+11   Premier League      M     ENG            2021          Liverpool
+12   Premier League      M     ENG            2021    Manchester City
+13   Premier League      M     ENG            2021     Manchester Utd
+14   Premier League      M     ENG            2021      Newcastle Utd
+15   Premier League      M     ENG            2021      Sheffield Utd
+16   Premier League      M     ENG            2021        Southampton
+17   Premier League      M     ENG            2021          Tottenham
+18   Premier League      M     ENG            2021          West Brom
+19   Premier League      M     ENG            2021           West Ham
+20   Premier League      M     ENG            2021             Wolves
+21   Premier League      M     ENG            2021         vs Arsenal
+22   Premier League      M     ENG            2021     vs Aston Villa
+23   Premier League      M     ENG            2021        vs Brighton
+24   Premier League      M     ENG            2021         vs Burnley
+25   Premier League      M     ENG            2021         vs Chelsea
+26   Premier League      M     ENG            2021  vs Crystal Palace
+27   Premier League      M     ENG            2021         vs Everton
+28   Premier League      M     ENG            2021          vs Fulham
+29   Premier League      M     ENG            2021    vs Leeds United
+30   Premier League      M     ENG            2021  vs Leicester City
+31   Premier League      M     ENG            2021       vs Liverpool
+32   Premier League      M     ENG            2021 vs Manchester City
+33   Premier League      M     ENG            2021  vs Manchester Utd
+34   Premier League      M     ENG            2021   vs Newcastle Utd
+35   Premier League      M     ENG            2021   vs Sheffield Utd
+36   Premier League      M     ENG            2021     vs Southampton
+37   Premier League      M     ENG            2021       vs Tottenham
+38   Premier League      M     ENG            2021       vs West Brom
+39   Premier League      M     ENG            2021        vs West Ham
+40   Premier League      M     ENG            2021          vs Wolves
+   Team_or_Opponent Num_Players  Age Poss MP_Playing_Time Starts_Playing_Time
+1              team          29 25.9 53.5              38                 418
+2              team          24 25.2 48.5              38                 418
+3              team          27 25.8 51.1              38                 418
+4              team          25 28.3 42.1              38                 418
+5              team          27 26.0 60.9              38                 418
+6              team          24 29.1 40.6              38                 418
+7              team          29 26.3 46.4              38                 418
+8              team          28 25.2 49.7              38                 418
+9              team          23 26.1 57.3              38                 418
+10             team          27 26.5 54.3              38                 418
+11             team          28 26.8 62.1              38                 418
+12             team          24 26.1 63.5              38                 418
+13             team          29 25.6 55.7              38                 418
+14             team          27 27.1 38.8              38                 418
+15             team          27 26.7 41.7              38                 418
+16             team          29 26.6 52.0              38                 418
+17             team          24 27.2 51.6              38                 418
+18             team          30 26.4 37.9              38                 418
+19             team          24 27.8 43.2              38                 418
+20             team          27 26.3 49.3              38                 418
+21         opponent          29 26.7 46.2              38                 418
+22         opponent          24 26.7 51.9              38                 418
+23         opponent          27 26.4 48.7              38                 418
+24         opponent          25 26.6 58.3              38                 418
+25         opponent          27 26.3 38.6              38                 418
+26         opponent          24 26.4 59.9              38                 418
+27         opponent          29 26.4 53.5              38                 418
+28         opponent          28 26.6 50.1              38                 418
+29         opponent          23 26.5 42.4              38                 418
+30         opponent          27 26.5 45.4              38                 418
+31         opponent          28 26.6 37.6              38                 418
+32         opponent          24 26.4 36.1              38                 418
+33         opponent          29 26.6 44.2              38                 418
+34         opponent          27 26.6 61.8              38                 418
+35         opponent          27 26.7 58.5              38                 418
+36         opponent          29 26.5 47.8              38                 418
+37         opponent          24 26.5 48.3              38                 418
+38         opponent          30 26.6 62.4              38                 418
+39         opponent          24 26.6 57.1              38                 418
+40         opponent          27 26.6 50.7              38                 418
+   Min_Playing_Time Mins_Per_90_Playing_Time Gls Ast G_plus_A G_minus_PK PK
+1              3420                       38  53  38       91         47  6
+2              3420                       38  52  38       90         47  5
+3              3420                       38  39  24       63         33  6
+4              3420                       38  32  20       52         29  3
+5              3420                       38  56  38       94         48  8
+6              3420                       38  39  29       68         36  3
+7              3420                       38  45  32       77         41  4
+8              3420                       38  26  18       44         23  3
+9              3420                       38  60  45      105         56  4
+10             3420                       38  64  45      109         54 10
+11             3420                       38  65  43      108         59  6
+12             3420                       38  82  55      137         77  5
+13             3420                       38  70  51      121         60 10
+14             3420                       38  44  26       70         38  6
+15             3420                       38  19  13       32         16  3
+16             3420                       38  47  33       80         42  5
+17             3420                       38  66  50      116         61  5
+18             3420                       38  33  20       53         29  4
+19             3420                       38  60  46      106         58  2
+20             3420                       38  34  21       55         30  4
+21             3420                       38  35  25       60         33  2
+22             3420                       38  45  30       75         40  5
+23             3420                       38  44  30       74         38  6
+24             3420                       38  54  47      101         51  3
+25             3420                       38  35  26       61         32  3
+26             3420                       38  66  47      113         63  3
+27             3420                       38  47  33       80         44  3
+28             3420                       38  52  34       86         45  7
+29             3420                       38  52  36       88         44  8
+30             3420                       38  48  29       77         44  4
+31             3420                       38  42  29       71         38  4
+32             3420                       38  31  17       48         23  8
+33             3420                       38  42  28       70         38  4
+34             3420                       38  59  41      100         55  4
+35             3420                       38  60  45      105         57  3
+36             3420                       38  67  44      111         59  8
+37             3420                       38  42  24       66         32 10
+38             3420                       38  73  52      125         66  7
+39             3420                       38  43  34       77         40  3
+40             3420                       38  49  34       83         42  7
+   PKatt CrdY CrdR xG_Expected npxG_Expected xAG_Expected
+1      6   49    5        51.7          47.0         35.1
+2      6   71    4        52.5          47.9         37.4
+3      9   49    6        50.9          43.8         33.2
+4      3   48    0        39.3          36.9         27.7
+5     10   51    3        62.4          54.5         41.5
+6      4   56    2        34.1          31.0         23.6
+7      5   59    2        45.7          41.9         30.7
+8      6   67    3        40.5          35.9         26.3
+9      4   61    1        55.6          52.5         41.9
+10    12   61    0        55.8          46.3         33.7
+11     6   40    0        67.5          62.9         48.3
+12     9   46    2        68.2          61.2         45.4
+13    11   64    1        60.1          51.4         41.6
+14     7   65    3        43.4          37.8         29.0
+15     4   73    3        32.6          29.5         24.9
+16     6   52    3        41.2          36.6         25.8
+17     5   57    2        53.1          49.2         35.3
+18     4   51    4        35.8          32.7         24.4
+19     4   50    3        55.4          52.1         39.6
+20     4   55    1        36.5          33.4         24.1
+21     3   74    2        43.0          40.6         31.8
+22     6   73    7        51.1          46.4         31.1
+23     7   51    2        35.3          29.8         23.3
+24     3   32    2        54.7          52.3         42.5
+25     4   56    3        30.3          27.1         20.2
+26     4   44    4        58.2          55.1         42.7
+27     4   66    1        50.1          46.9         33.8
+28     7   40    1        52.6          47.2         37.4
+29     9   49    2        57.9          50.7         39.3
+30     4   61    1        46.0          42.9         33.0
+31     8   56    2        43.0          36.9         27.1
+32    10   61    2        30.2          22.3         15.0
+33     4   64    3        41.4          38.4         28.7
+34     5   60    3        58.3          54.4         40.5
+35     4   39    1        62.2          59.1         45.0
+36     9   58    3        53.1          46.1         34.6
+37    10   77    1        49.1          41.2         31.8
+38    11   50    1        67.9          59.3         44.1
+39     5   52    1        48.7          44.8         36.6
+40     8   62    6        49.5          43.2         31.1
+   npxG_plus_xAG_Expected PrgC_Progression PrgP_Progression Gls_Per_Minutes
+1                    82.1              758             1760            1.39
+2                    85.3              629             1420            1.37
+3                    77.0              685             1516            1.03
+4                    64.6              389             1012            0.84
+5                    96.0              895             1798            1.47
+6                    54.6              526             1132            1.03
+7                    72.6              604             1184            1.18
+8                    62.2              727             1354            0.68
+9                    94.3              811             1633            1.58
+10                   80.1              666             1464            1.68
+11                  111.2              886             2057            1.71
+12                  106.6             1096             2051            2.16
+13                   93.1              877             1832            1.84
+14                   66.8              467              903            1.16
+15                   54.4              491             1196            0.50
+16                   62.5              626             1195            1.24
+17                   84.4              633             1330            1.74
+18                   57.1              441             1027            0.87
+19                   91.7              658             1282            1.58
+20                   57.6              800             1283            0.89
+21                   72.4              604             1175            0.92
+22                   77.5              726             1549            1.18
+23                   53.2              587             1302            1.16
+24                   94.8              884             1665            1.42
+25                   47.3              497             1062            0.92
+26                   97.8              666             1807            1.74
+27                   80.7              794             1664            1.24
+28                   84.5              559             1327            1.37
+29                   90.0              720             1201            1.37
+30                   75.9              567             1254            1.26
+31                   64.0              539              972            1.11
+32                   37.4              537              850            0.82
+33                   67.0              573             1229            1.11
+34                   94.9              851             1771            1.55
+35                  104.1              828             1606            1.58
+36                   80.6              555             1407            1.76
+37                   73.1              723             1514            1.11
+38                  103.4              931             1802            1.92
+39                   81.4              826             1698            1.13
+40                   74.3              698             1574            1.29
+   Ast_Per_Minutes G_plus_A_Per_Minutes G_minus_PK_Per_Minutes
+1             1.00                 2.39                   1.24
+2             1.00                 2.37                   1.24
+3             0.63                 1.66                   0.87
+4             0.53                 1.37                   0.76
+5             1.00                 2.47                   1.26
+6             0.76                 1.79                   0.95
+7             0.84                 2.03                   1.08
+8             0.47                 1.16                   0.61
+9             1.18                 2.76                   1.47
+10            1.18                 2.87                   1.42
+11            1.13                 2.84                   1.55
+12            1.45                 3.61                   2.03
+13            1.34                 3.18                   1.58
+14            0.68                 1.84                   1.00
+15            0.34                 0.84                   0.42
+16            0.87                 2.11                   1.11
+17            1.32                 3.05                   1.61
+18            0.53                 1.39                   0.76
+19            1.21                 2.79                   1.53
+20            0.55                 1.45                   0.79
+21            0.66                 1.58                   0.87
+22            0.79                 1.97                   1.05
+23            0.79                 1.95                   1.00
+24            1.24                 2.66                   1.34
+25            0.68                 1.61                   0.84
+26            1.24                 2.97                   1.66
+27            0.87                 2.11                   1.16
+28            0.89                 2.26                   1.18
+29            0.95                 2.32                   1.16
+30            0.76                 2.03                   1.16
+31            0.76                 1.87                   1.00
+32            0.45                 1.26                   0.61
+33            0.74                 1.84                   1.00
+34            1.08                 2.63                   1.45
+35            1.18                 2.76                   1.50
+36            1.16                 2.92                   1.55
+37            0.63                 1.74                   0.84
+38            1.37                 3.29                   1.74
+39            0.89                 2.03                   1.05
+40            0.89                 2.18                   1.11
+   G_plus_A_minus_PK_Per_Minutes xG_Per_Minutes xAG_Per_Minutes
+1                           2.24           1.36            0.92
+2                           2.24           1.38            0.98
+3                           1.50           1.34            0.87
+4                           1.29           1.03            0.73
+5                           2.26           1.64            1.09
+6                           1.71           0.90            0.62
+7                           1.92           1.20            0.81
+8                           1.08           1.07            0.69
+9                           2.66           1.46            1.10
+10                          2.61           1.47            0.89
+11                          2.68           1.78            1.27
+12                          3.47           1.80            1.19
+13                          2.92           1.58            1.10
+14                          1.68           1.14            0.76
+15                          0.76           0.86            0.66
+16                          1.97           1.09            0.68
+17                          2.92           1.40            0.93
+18                          1.29           0.94            0.64
+19                          2.74           1.46            1.04
+20                          1.34           0.96            0.63
+21                          1.53           1.13            0.84
+22                          1.84           1.34            0.82
+23                          1.79           0.93            0.61
+24                          2.58           1.44            1.12
+25                          1.53           0.80            0.53
+26                          2.89           1.53            1.12
+27                          2.03           1.32            0.89
+28                          2.08           1.38            0.98
+29                          2.11           1.52            1.03
+30                          1.92           1.21            0.87
+31                          1.76           1.13            0.71
+32                          1.05           0.80            0.40
+33                          1.74           1.09            0.75
+34                          2.53           1.54            1.07
+35                          2.68           1.64            1.18
+36                          2.71           1.40            0.91
+37                          1.47           1.29            0.84
+38                          3.11           1.79            1.16
+39                          1.95           1.28            0.96
+40                          2.00           1.30            0.82
+   xG_plus_xAG_Per_Minutes npxG_Per_Minutes npxG_plus_xAG_Per_Minutes
+1                     2.29             1.24                      2.16
+2                     2.37             1.26                      2.25
+3                     2.21             1.15                      2.03
+4                     1.76             0.97                      1.70
+5                     2.73             1.43                      2.53
+6                     1.52             0.82                      1.44
+7                     2.01             1.10                      1.91
+8                     1.76             0.95                      1.64
+9                     2.57             1.38                      2.48
+10                    2.36             1.22                      2.11
+11                    3.05             1.66                      2.93
+12                    2.99             1.61                      2.81
+13                    2.68             1.35                      2.45
+14                    1.91             1.00                      1.76
+15                    1.52             0.78                      1.43
+16                    1.77             0.96                      1.64
+17                    2.33             1.29                      2.22
+18                    1.59             0.86                      1.50
+19                    2.50             1.37                      2.41
+20                    1.60             0.88                      1.51
+21                    1.97             1.07                      1.91
+22                    2.16             1.22                      2.04
+23                    1.54             0.79                      1.40
+24                    2.56             1.38                      2.50
+25                    1.33             0.71                      1.25
+26                    2.66             1.45                      2.57
+27                    2.21             1.24                      2.12
+28                    2.37             1.24                      2.22
+29                    2.56             1.33                      2.37
+30                    2.08             1.13                      2.00
+31                    1.84             0.97                      1.68
+32                    1.19             0.59                      0.98
+33                    1.84             1.01                      1.76
+34                    2.60             1.43                      2.50
+35                    2.82             1.56                      2.74
+36                    2.31             1.21                      2.12
+37                    2.13             1.09                      1.92
+38                    2.95             1.56                      2.72
+39                    2.24             1.18                      2.14
+40                    2.12             1.14                      1.96</code></pre>
+</div>
+</div>
+<p>Again, this could be turned into a function and sent through a range of years if you just wanted one league. Just like the one above.</p>
+</section>
+<section id="goal-logs" class="level3">
+<h3 class="anchored" data-anchor-id="goal-logs">Goal logs</h3>
+<p>Interesting information about goals. This function is described here: <a href="https://jaseziv.github.io/worldfootballR/reference/fb_team_goal_logs.html">fb_team_goal_logs()</a>. What I don’t know is how to get different years.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>team_urls <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://fbref.com/en/squads/b8fd03ef/Manchester-City-Stats"</span>, <span class="st">"https://fbref.com/en/squads/822bd0ba/Liverpool-Stats"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fb_team_goal_logs</span>(<span class="at">team_urls =</span> team_urls, <span class="at">for_or_against =</span> <span class="st">"for"</span>, <span class="at">time_pause =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Rk       Date                Comp               Round Venue
+1   1 2024-08-10 FA Community Shield FA Community Shield  Home
+2   2 2024-08-18      Premier League         Matchweek 1  Away
+3   3 2024-08-18      Premier League         Matchweek 1  Away
+4   4 2024-08-24      Premier League         Matchweek 2  Home
+5   5 2024-08-24      Premier League         Matchweek 2  Home
+6   6 2024-08-24      Premier League         Matchweek 2  Home
+7   7 2024-08-24      Premier League         Matchweek 2  Home
+8   8 2024-08-31      Premier League         Matchweek 3  Away
+9   9 2024-08-31      Premier League         Matchweek 3  Away
+10 10 2024-08-31      Premier League         Matchweek 3  Away
+11 11 2024-09-14      Premier League         Matchweek 4  Home
+12 12 2024-09-14      Premier League         Matchweek 4  Home
+13 13 2024-09-22      Premier League         Matchweek 5  Home
+14 14 2024-09-22      Premier League         Matchweek 5  Home
+15 16 2024-09-24             EFL Cup         Third round  Home
+16 15 2024-09-24             EFL Cup         Third round  Home
+17 17 2024-09-28      Premier League         Matchweek 6  Away
+18 19 2024-10-01        Champions Lg        League phase  Away
+19 20 2024-10-01        Champions Lg        League phase  Away
+20 21 2024-10-01        Champions Lg        League phase  Away
+21 18 2024-10-01        Champions Lg        League phase  Away
+22 22 2024-10-05      Premier League         Matchweek 7  Home
+23 23 2024-10-05      Premier League         Matchweek 7  Home
+24 24 2024-10-05      Premier League         Matchweek 7  Home
+25 25 2024-10-20      Premier League         Matchweek 8  Away
+26 26 2024-10-20      Premier League         Matchweek 8  Away
+27 27 2024-10-23        Champions Lg        League phase  Home
+28 28 2024-10-23        Champions Lg        League phase  Home
+29 29 2024-10-23        Champions Lg        League phase  Home
+30 30 2024-10-23        Champions Lg        League phase  Home
+31 31 2024-10-23        Champions Lg        League phase  Home
+32 32 2024-10-26      Premier League         Matchweek 9  Home
+33 33 2024-10-30             EFL Cup        Fourth round  Away
+34  1 2024-08-17      Premier League         Matchweek 1  Away
+35  2 2024-08-17      Premier League         Matchweek 1  Away
+36  3 2024-08-25      Premier League         Matchweek 2  Home
+37  4 2024-08-25      Premier League         Matchweek 2  Home
+38  5 2024-09-01      Premier League         Matchweek 3  Away
+39  6 2024-09-01      Premier League         Matchweek 3  Away
+40  7 2024-09-01      Premier League         Matchweek 3  Away
+41  8 2024-09-17        Champions Lg        League phase  Away
+42  9 2024-09-17        Champions Lg        League phase  Away
+43 10 2024-09-17        Champions Lg        League phase  Away
+44 11 2024-09-21      Premier League         Matchweek 5  Home
+45 12 2024-09-21      Premier League         Matchweek 5  Home
+46 13 2024-09-21      Premier League         Matchweek 5  Home
+47 14 2024-09-25             EFL Cup         Third round  Home
+48 15 2024-09-25             EFL Cup         Third round  Home
+49 16 2024-09-25             EFL Cup         Third round  Home
+50 17 2024-09-25             EFL Cup         Third round  Home
+51 18 2024-09-25             EFL Cup         Third round  Home
+52 19 2024-09-28      Premier League         Matchweek 6  Away
+53 20 2024-09-28      Premier League         Matchweek 6  Away
+54 21 2024-10-02        Champions Lg        League phase  Home
+55 22 2024-10-02        Champions Lg        League phase  Home
+56 23 2024-10-05      Premier League         Matchweek 7  Away
+57 24 2024-10-20      Premier League         Matchweek 8  Home
+58 25 2024-10-20      Premier League         Matchweek 8  Home
+59 26 2024-10-23        Champions Lg        League phase  Away
+60 27 2024-10-27      Premier League         Matchweek 9  Away
+61 28 2024-10-27      Premier League         Matchweek 9  Away
+62 29 2024-10-30             EFL Cup        Fourth round  Away
+63 30 2024-10-30             EFL Cup        Fourth round  Away
+64 31 2024-10-30             EFL Cup        Fourth round  Away
+                Scorer          Opponent Start   xG PSxG  Body_Part Distance
+1       Bernardo Silva    Manchester Utd     N   NA   NA                  NA
+2       Erling Haaland           Chelsea     Y 0.17 0.18  Left Foot        9
+3        Mateo Kovačić           Chelsea     Y 0.08 0.07 Right Foot       23
+4       Erling Haaland      Ipswich Town     Y 0.79 0.84  Left Foot       13
+5      Kevin De Bruyne      Ipswich Town    Y* 0.59 0.97  Left Foot       26
+6       Erling Haaland      Ipswich Town     Y 0.21 0.92  Left Foot       13
+7       Erling Haaland      Ipswich Town     Y 0.04 0.31  Left Foot       25
+8       Erling Haaland          West Ham     Y 0.46 0.88  Left Foot       15
+9       Erling Haaland          West Ham     Y 0.08 0.28  Left Foot       16
+10      Erling Haaland          West Ham     Y 0.55 0.66  Left Foot       20
+11      Erling Haaland         Brentford     Y 0.07 0.50 Right Foot       10
+12      Erling Haaland         Brentford     Y 0.38 0.22  Left Foot       15
+13      Erling Haaland           Arsenal     Y 0.51 0.52  Left Foot       15
+14         John Stones           Arsenal     N 0.18 0.43  Left Foot        6
+15       Matheus Nunes           Watford     Y   NA   NA                  NA
+16         Jeremy Doku           Watford     Y   NA   NA                  NA
+17      Joško Gvardiol     Newcastle Utd     Y 0.08 0.68 Right Foot       10
+18          Phil Foden Slovan Bratislava     Y 0.10 0.85  Left Foot       18
+19      Erling Haaland Slovan Bratislava     Y 0.96 1.00 Right Foot        4
+20        James Mcatee Slovan Bratislava     N 0.08 0.41  Left Foot       12
+21      İlkay Gündoğan Slovan Bratislava    Y* 0.10 0.67 Right Foot       20
+22       Mateo Kovačić            Fulham     Y 0.07 0.39 Right Foot       16
+23       Mateo Kovačić            Fulham     Y 0.13 0.15 Right Foot       20
+24         Jeremy Doku            Fulham     N 0.06 0.07 Right Foot       21
+25      Joško Gvardiol            Wolves     Y 0.02 0.12 Right Foot       24
+26         John Stones            Wolves     Y 0.26 0.40       Head        4
+27          Phil Foden     Sparta Prague     Y 0.06 0.27  Left Foot       17
+28      Erling Haaland     Sparta Prague     Y 0.09 0.76  Left Foot       11
+29         John Stones     Sparta Prague     Y 0.18 0.80       Head        8
+30      Erling Haaland     Sparta Prague     Y 0.19 0.75 Right Foot       14
+31       Matheus Nunes     Sparta Prague     Y 0.79 0.85 Right Foot       13
+32      Erling Haaland       Southampton     Y 0.38 0.34  Left Foot        7
+33       Matheus Nunes         Tottenham     Y   NA   NA                  NA
+34          Diogo Jota      Ipswich Town     Y 0.44 0.92  Left Foot       11
+35       Mohamed Salah      Ipswich Town     Y 0.41 0.82  Left Foot        7
+36           Luis Díaz         Brentford     Y 0.42 0.24  Left Foot       16
+37       Mohamed Salah         Brentford     Y 0.43 0.58  Left Foot       12
+38           Luis Díaz    Manchester Utd     Y 0.29 0.95       Head        5
+39           Luis Díaz    Manchester Utd     Y 0.32 0.72 Right Foot       15
+40       Mohamed Salah    Manchester Utd     Y 0.20 0.77  Left Foot       16
+41     Ibrahima Konaté             Milan     Y 0.41 0.39       Head        3
+42     Virgil van Dijk             Milan    Y* 0.28 0.76       Head        3
+43  Dominik Szoboszlai             Milan     Y 0.52 0.99 Right Foot        7
+44           Luis Díaz       Bournemouth     Y 0.13 0.86 Right Foot       15
+45           Luis Díaz       Bournemouth     Y 0.24 0.26  Left Foot        9
+46        Darwin Núñez       Bournemouth     Y 0.06 0.64  Left Foot       16
+47          Diogo Jota          West Ham     Y   NA   NA                  NA
+48          Diogo Jota          West Ham     Y   NA   NA                  NA
+49       Mohamed Salah          West Ham     N   NA   NA                  NA
+50          Cody Gakpo          West Ham     Y   NA   NA                  NA
+51          Cody Gakpo          West Ham     Y   NA   NA                  NA
+52     Ibrahima Konaté            Wolves     Y 0.10 0.12       Head        8
+53       Mohamed Salah            Wolves     Y 0.79 0.60  Left Foot       13
+54 Alexis Mac Allister           Bologna     Y 0.83 0.94  Left Foot        2
+55       Mohamed Salah           Bologna     Y 0.08 0.79  Left Foot       18
+56          Diogo Jota    Crystal Palace     Y 0.25 0.23 Right Foot       11
+57       Mohamed Salah           Chelsea     Y 0.79 0.79  Left Foot       13
+58        Curtis Jones           Chelsea     Y 0.69 0.97 Right Foot        3
+59        Darwin Núñez        RB Leipzig     Y 0.90 0.99 Right Foot        2
+60     Virgil van Dijk           Arsenal    Y* 0.25 0.72       Head        5
+61       Mohamed Salah           Arsenal     Y 0.29 0.79  Left Foot       13
+62          Cody Gakpo          Brighton     Y   NA   NA                  NA
+63          Cody Gakpo          Brighton     Y   NA   NA                  NA
+64           Luis Díaz          Brighton     Y   NA   NA                  NA
+   Minute Score           Goalkeeper                 Assist
+1      89                                        Oscar Bobb
+2      18   0-0       Robert Sánchez         Bernardo Silva
+3      84   1-0       Robert Sánchez                       
+4      12   0-1       Arijanet Muric                       
+5      14   1-1       Arijanet Muric                  Sávio
+6      16   2-1       Arijanet Muric        Kevin De Bruyne
+7      88   3-1       Arijanet Muric                       
+8      10   0-0      Alphonse Areola         Bernardo Silva
+9      30   1-1      Alphonse Areola             Rico Lewis
+10     83   2-1     Łukasz Fabiański          Matheus Nunes
+11     19   0-1         Mark Flekken                       
+12     32   1-1         Mark Flekken                Ederson
+13      9   0-0           David Raya                  Sávio
+14   90+8   1-2           David Raya                       
+15     38   1-0        Jonathan Bond             Rico Lewis
+16      5   0-0        Jonathan Bond          Jack Grealish
+17     35   0-0            Nick Pope          Jack Grealish
+18     15   1-0        Dominik Takáč            Jeremy Doku
+19     58   2-0        Dominik Takáč             Rico Lewis
+20     74   3-0        Dominik Takáč             Phil Foden
+21      8   0-0        Dominik Takáč                       
+22     32   0-1           Bernd Leno                       
+23     47   1-1           Bernd Leno         Bernardo Silva
+24     82   2-1           Bernd Leno             Rico Lewis
+25     33   0-1              José Sá            Jeremy Doku
+26   90+5   1-1              José Sá             Phil Foden
+27      3   0-0 Peter Vindahl Jensen          Manuel Akanji
+28     58   1-0 Peter Vindahl Jensen                  Sávio
+29     64   2-0 Peter Vindahl Jensen          Matheus Nunes
+30     68   3-0 Peter Vindahl Jensen          Matheus Nunes
+31     88   4-0 Peter Vindahl Jensen                       
+32      5   0-0       Aaron Ramsdale          Matheus Nunes
+33   45+4   0-2    Guglielmo Vicario                  Sávio
+34     60   0-0     Christian Walton          Mohamed Salah
+35     65   1-0     Christian Walton                       
+36     13   0-0         Mark Flekken             Diogo Jota
+37     70   1-0         Mark Flekken              Luis Díaz
+38     35   0-0          André Onana          Mohamed Salah
+39     42   1-0          André Onana          Mohamed Salah
+40     56   2-0          André Onana     Dominik Szoboszlai
+41     23   0-1         Mike Maignan Trent Alexander-Arnold
+42     41   1-1         Mike Maignan        Kostas Tsimikas
+43     67   2-1     Lorenzo Torriani             Cody Gakpo
+44     26   0-0    Kepa Arrizabalaga        Ibrahima Konaté
+45     28   1-0    Kepa Arrizabalaga Trent Alexander-Arnold
+46     37   2-0    Kepa Arrizabalaga          Mohamed Salah
+47     25   0-1     Łukasz Fabiański        Federico Chiesa
+48     49   1-1     Łukasz Fabiański           Curtis Jones
+49     74   2-1     Łukasz Fabiański                       
+50     90   3-1     Łukasz Fabiański           Darwin Núñez
+51   90+3   4-1     Łukasz Fabiański                       
+52   45+2   0-0        Sam Johnstone             Diogo Jota
+53     61   1-1        Sam Johnstone                       
+54     11   0-0     Łukasz Skorupski          Mohamed Salah
+55     75   1-0     Łukasz Skorupski     Dominik Szoboszlai
+56      9   0-0       Dean Henderson             Cody Gakpo
+57     29   0-0       Robert Sánchez                       
+58     51   1-1       Robert Sánchez          Mohamed Salah
+59     27   0-0        Péter Gulácsi          Mohamed Salah
+60     18   0-1           David Raya              Luis Díaz
+61     81   1-2           David Raya           Darwin Núñez
+62     46   0-0         Jason Steele           Tyler Morton
+63     63   1-0         Jason Steele                       
+64     85   2-1         Jason Steele                       
+                     GCA1       Type1                   GCA2       Type2
+1                                                                       
+2          Erling Haaland     Take-On         Bernardo Silva Pass (Live)
+3           Mateo Kovačić     Take-On                                   
+4                   Sávio      Fouled          Manuel Akanji Pass (Live)
+5                   Sávio Pass (Live)                  Sávio      Tackle
+6          Erling Haaland     Take-On        Kevin De Bruyne Pass (Live)
+7          Bernardo Silva Pass (Live)         İlkay Gündoğan Pass (Live)
+8          Bernardo Silva Pass (Live)                                   
+9              Rico Lewis Pass (Live)          Mateo Kovačić Pass (Live)
+10          Matheus Nunes Pass (Live)          Matheus Nunes     Take-On
+11                                                                      
+12                Ederson Pass (Live)            John Stones Pass (Live)
+13                  Sávio Pass (Live)                  Sávio     Take-On
+14          Mateo Kovačić        Shot                                   
+15                                                                      
+16                                                                      
+17         Joško Gvardiol     Take-On          Jack Grealish Pass (Live)
+18            Jeremy Doku Pass (Live)             Phil Foden Pass (Live)
+19         Erling Haaland     Take-On             Rico Lewis Pass (Live)
+20             Phil Foden Pass (Live)             Rico Lewis Pass (Live)
+21                  Sávio        Shot                                   
+22          Jack Grealish      Tackle                                   
+23         Bernardo Silva Pass (Live)             Phil Foden Pass (Live)
+24             Rico Lewis Pass (Live)         Erling Haaland Pass (Live)
+25            Jeremy Doku Pass (Live)         Joško Gvardiol Pass (Live)
+26             Phil Foden Pass (Dead)             Phil Foden        Shot
+27          Manuel Akanji Pass (Live)            John Stones Pass (Live)
+28                  Sávio Pass (Live)                  Sávio     Take-On
+29          Matheus Nunes Pass (Live)         İlkay Gündoğan Pass (Live)
+30          Matheus Nunes Pass (Live)             Phil Foden Pass (Live)
+31          Matheus Nunes      Fouled          Matheus Nunes     Take-On
+32          Matheus Nunes Pass (Live)         Bernardo Silva Pass (Live)
+33                                                                      
+34          Mohamed Salah Pass (Live) Trent Alexander-Arnold Pass (Live)
+35        Virgil van Dijk Pass (Live)       Ryan Gravenberch Pass (Live)
+36             Diogo Jota Pass (Live)                                   
+37              Luis Díaz Pass (Live)    Alexis Mac Allister Pass (Live)
+38          Mohamed Salah Pass (Live)       Ryan Gravenberch Pass (Live)
+39          Mohamed Salah Pass (Live)              Luis Díaz Pass (Live)
+40     Dominik Szoboszlai Pass (Live)    Alexis Mac Allister Pass (Live)
+41 Trent Alexander-Arnold Pass (Dead)             Cody Gakpo      Fouled
+42        Kostas Tsimikas Pass (Dead)          Mohamed Salah        Shot
+43             Cody Gakpo Pass (Live)             Cody Gakpo     Take-On
+44        Ibrahima Konaté Pass (Live)      Caoimhín Kelleher Pass (Live)
+45 Trent Alexander-Arnold Pass (Live)          Mohamed Salah Pass (Live)
+46          Mohamed Salah Pass (Live)           Darwin Núñez Pass (Live)
+47                                                                      
+48                                                                      
+49                                                                      
+50                                                                      
+51                                                                      
+52             Diogo Jota Pass (Live)       Ryan Gravenberch Pass (Live)
+53             Diogo Jota      Fouled              Luis Díaz Pass (Live)
+54          Mohamed Salah Pass (Live)           Darwin Núñez Pass (Live)
+55     Dominik Szoboszlai Pass (Live)             Diogo Jota Pass (Live)
+56             Cody Gakpo Pass (Live)        Kostas Tsimikas Pass (Live)
+57           Curtis Jones      Fouled          Mohamed Salah        Shot
+58          Mohamed Salah Pass (Live)     Dominik Szoboszlai Pass (Live)
+59          Mohamed Salah        Shot                                   
+60              Luis Díaz Pass (Live) Trent Alexander-Arnold Pass (Dead)
+61           Darwin Núñez Pass (Live) Trent Alexander-Arnold Pass (Live)
+62                                                                      
+63                                                                      
+64                                                                      
+       Notes For_or_Against
+1                       for
+2                       for
+3                       for
+4                       for
+5                       for
+6                       for
+7                       for
+8                       for
+9                       for
+10                      for
+11 Deflected            for
+12                      for
+13                      for
+14                      for
+15                      for
+16                      for
+17 Deflected            for
+18                      for
+19                      for
+20                      for
+21 Deflected            for
+22 Deflected            for
+23                      for
+24                      for
+25                      for
+26                      for
+27                      for
+28    Volley            for
+29                      for
+30                      for
+31                      for
+32                      for
+33                      for
+34                      for
+35                      for
+36                      for
+37                      for
+38                      for
+39                      for
+40                      for
+41                      for
+42                      for
+43    Volley            for
+44                      for
+45                      for
+46                      for
+47                      for
+48                      for
+49                      for
+50                      for
+51                      for
+52                      for
+53                      for
+54                      for
+55                      for
+56                      for
+57                      for
+58                      for
+59    Volley            for
+60                      for
+61                      for
+62                      for
+63                      for
+64                      for</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/utdata/sportsdataverse-examples/blob/main/worldfootballr-fbref-teamstats.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/utdata/sportsdataverse-examples/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

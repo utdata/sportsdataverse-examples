@@ -1,0 +1,46 @@
+---
+title: "BaseballR"
+---
+
+Exploring the [baseballR](https://billpetti.github.io/baseballr/articles/baseballr.html) pacakge.
+
+## Setup
+
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(janitor)
+library(baseballr)
+```
+
+
+## Baseball reference
+
+This gets standings on a particular date?
+
+```{r}
+bref_standings_on_date("2015-08-01", "NL East", from = FALSE)
+```
+
+## Fangraph
+
+Game-by-game batting statistics for a specific player:
+
+```{r}
+fg_batter_game_logs(playerid = 6184, year = 2017)
+```
+
+## Statcast
+
+This gathers data from here:
+
+https://baseballsavant.mlb.com/statcast_leaderboard?year=2021&abs=50&type=batter
+
+```{r}
+statcast_leaderboards(leaderboard = "exit_velocity_barrels", year = 2021)
+```
+

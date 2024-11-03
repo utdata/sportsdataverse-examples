@@ -1,0 +1,72 @@
+---
+title: "FBref scores & schedules"
+---
+
+The aim is to pull data from a page like this: [2023 Scores and Fixtures](https://fbref.com/en/comps/22/2023/schedule/2023-Major-League-Soccer-Scores-and-Fixtures)
+
+this uses the [worldfootballr package](https://jaseziv.github.io/worldfootballR/index.html) and mainly the [fb_match_results](https://jaseziv.github.io/worldfootballR/reference/fb_match_results.html)
+
+
+- Figure out how to get one year
+- Figure out how to save to computer
+- Figure out how to do multiple years
+
+
+## Setup
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(janitor)
+library(worldfootballR)
+```
+
+
+## Match results function
+
+This is our jam.
+
+
+Match results
+
+```{r}
+mls_2024 <- fb_match_results(
+  country = "USA",
+  gender = "M",
+  season_end_year = 2023,
+  tier = "1st"
+) |> clean_names()
+
+mls_2024
+```
+
+## Austin sellout?
+
+Interestingly, there is no Attendance reported for the final Austin FC home game in 2024.
+
+```{r}
+mls_2024 |> 
+  filter(home == "Austin")
+```
+
+```{r}
+mls_2024 |> filter(is.na(attendance), round == "Regular Season") |> 
+  select(round, wk, date, home, away, attendance, venue) |> 
+  arrange(date)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
