@@ -12,6 +12,7 @@ website:
         text: Home
       - baseballr.qmd
       - worldfootballr-fbref-teamstats.qmd
+      - worldfootballr-fbref-players.qmd
       - worldfootballr-fbref-scores.qmd
   repo-url: https://github.com/utdata/sportsdataverse-examples
   repo-actions: [source, issue]
@@ -22,5 +23,6 @@ format:
     css: styles.css
     toc: true
 
+df-print: paged
 
 

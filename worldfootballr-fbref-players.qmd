@@ -1,0 +1,38 @@
+---
+title: "FBref Big 5 player stats"
+---
+
+Getting standard player stats. Goal is to look into cards.
+
+## Setup
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(janitor)
+library(worldfootballR)
+```
+
+
+## Player stats
+
+This is for all players in European top flight leagues for one year.
+
+```{r}
+big5_player_stats_21 <- fb_big5_advanced_season_stats(
+  season_end_year=2021,
+  stat_type="standard",
+  team_or_player="player",
+  time_pause = 3) |>
+  clean_names()
+```
+
+```{r}
+big5_player_stats_21
+```
+
+That result could be treated like [Team stats](worldfootballr-fbref-teamstats.qmd) and turned into a function to download multiple years.
+
