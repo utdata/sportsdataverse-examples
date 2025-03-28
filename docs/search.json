@@ -4,103 +4,59 @@
     "href": "usfootballr-scores.html",
     "title": "US Football scores",
     "section": "",
-    "text": "Most of usfootballR does not work.\nlibrary(tidyverse)\nlibrary(janitor)\nlibrary(usfootballR)\ntry(load_mls_schedule(2022))\n\nWarning in readRDS(con): cannot open URL\n'https://raw.githubusercontent.com/saiemgilani/usfootballR-data/master/mls/schedules/rds/mls_schedule_2022.rds':\nHTTP status was '404 Not Found'\n\n\nWarning: Failed to readRDS from\n&lt;https://raw.githubusercontent.com/saiemgilani/usfootballR-data/master/mls/schedules/rds/mls_schedule_2022.rds&gt;\ntry(load_mls_team_box(2022))\n\nWarning in readRDS(con): cannot open URL\n'https://raw.githubusercontent.com/saiemgilani/usfootballR-data/master/mls/team_box/rds/team_box_2022.rds':\nHTTP status was '404 Not Found'\n\n\nWarning: Failed to readRDS from\n&lt;https://raw.githubusercontent.com/saiemgilani/usfootballR-data/master/mls/team_box/rds/team_box_2022.rds&gt;"
+    "text": "Most of usfootballR does not work.\nlibrary(tidyverse)\nlibrary(janitor)\nlibrary(usfootballR)\ntry(load_mls_schedule(2022))\n\nWarning in readRDS(con): cannot open URL\n'https://raw.githubusercontent.com/saiemgilani/usfootballR-data/master/mls/schedules/rds/mls_schedule_2022.rds':\nHTTP status was '404 Not Found'\n\n\nWarning: Failed to readRDS from\n&lt;https://raw.githubusercontent.com/saiemgilani/usfootballR-data/master/mls/schedules/rds/mls_schedule_2022.rds&gt;\ntry(load_mls_team_box(2022))\n\nWarning in readRDS(con): cannot open URL\n'https://raw.githubusercontent.com/saiemgilani/usfootballR-data/master/mls/team_box/rds/team_box_2022.rds':\nHTTP status was '404 Not Found'\n\n\nWarning: Failed to readRDS from\n&lt;https://raw.githubusercontent.com/saiemgilani/usfootballR-data/master/mls/team_box/rds/team_box_2022.rds&gt;",
+    "crumbs": [
+      "US Football scores"
+    ]
   },
   {
     "objectID": "usfootballr-scores.html#espn",
     "href": "usfootballr-scores.html#espn",
     "title": "US Football scores",
     "section": "Espn",
-    "text": "Espn\n\ntry(espn_mls_teams())\n\n\n  \n\n\n\n\ntry(espn_mls_scoreboard (season = \"20200829\"))\n\n2024-11-04 07:59:33.229556: Invalid arguments or no scoreboard data available!"
+    "text": "Espn\n\ntry(espn_mls_teams())\n\n\n  \n\n\n\n\ntry(espn_mls_scoreboard (season = \"20200829\"))\n\n2025-03-28 13:55:49.371197: Invalid arguments or no scoreboard data available!",
+    "crumbs": [
+      "US Football scores"
+    ]
   },
   {
-    "objectID": "worldfootballr-fbref-teamstats.html",
-    "href": "worldfootballr-fbref-teamstats.html",
-    "title": "FBRef team stats",
+    "objectID": "worldfootballr-fbref-scores.html",
+    "href": "worldfootballr-fbref-scores.html",
+    "title": "FBref scores & schedules",
     "section": "",
-    "text": "Exploring the worldfootballR package where you can get soccer stats from FBref.com and more.\nHere we are trying to get goals by team for a season, which are in the standard season ending team stats.",
+    "text": "The aim is to pull data from a page like this: 2023 Scores and Fixtures\nthis uses the worldfootballr package and mainly the fb_match_results",
     "crumbs": [
-      "FBRef team stats"
+      "FBref scores & schedules"
     ]
   },
   {
-    "objectID": "worldfootballr-fbref-teamstats.html#install-the-packages",
-    "href": "worldfootballr-fbref-teamstats.html#install-the-packages",
-    "title": "FBRef team stats",
-    "section": "Install the packages",
-    "text": "Install the packages\nIf you don’t already have the devtools and worldfootballR packages, uncomment the code below to install them. HOWEVER, recomment after you’ve done so. You only have to install the packages ONE TIME.\n\n# install.packages(\"devtools\")\n# devtools::install_github(\"JaseZiv/worldfootballR\")",
-    "crumbs": [
-      "FBRef team stats"
-    ]
-  },
-  {
-    "objectID": "worldfootballr-fbref-teamstats.html#setup",
-    "href": "worldfootballr-fbref-teamstats.html#setup",
-    "title": "FBRef team stats",
+    "objectID": "worldfootballr-fbref-scores.html#setup",
+    "href": "worldfootballr-fbref-scores.html#setup",
+    "title": "FBref scores & schedules",
     "section": "Setup",
     "text": "Setup\n\nlibrary(tidyverse)\nlibrary(janitor)\nlibrary(worldfootballR)",
     "crumbs": [
-      "FBRef team stats"
+      "FBref scores & schedules"
     ]
   },
   {
-    "objectID": "worldfootballr-fbref-teamstats.html#basic-use",
-    "href": "worldfootballr-fbref-teamstats.html#basic-use",
-    "title": "FBRef team stats",
-    "section": "Basic use",
-    "text": "Basic use\nAn attempt to learn how to do certain things.\nThis gets the URL for specific leagues and years.\nThe function is described here: fb_league_urls()\n\nfb_league_urls(country = \"ENG\", gender = \"M\", season_end_year = 2021, tier = '1st')\n\n[1] \"https://fbref.com/en/comps/9/2020-2021/2020-2021-Premier-League-Stats\"\n\n\nWhich then lets you get team urls:\nThis function is described here. fb_teams_urls()\n\nfb_teams_urls(\"https://fbref.com/en/comps/9/Premier-League-Stats\")\n\n [1] \"https://fbref.com/en/squads/b8fd03ef/Manchester-City-Stats\"         \n [2] \"https://fbref.com/en/squads/822bd0ba/Liverpool-Stats\"               \n [3] \"https://fbref.com/en/squads/18bb7c10/Arsenal-Stats\"                 \n [4] \"https://fbref.com/en/squads/8602292d/Aston-Villa-Stats\"             \n [5] \"https://fbref.com/en/squads/cff3d9bb/Chelsea-Stats\"                 \n [6] \"https://fbref.com/en/squads/d07537b9/Brighton-and-Hove-Albion-Stats\"\n [7] \"https://fbref.com/en/squads/e4a775cb/Nottingham-Forest-Stats\"       \n [8] \"https://fbref.com/en/squads/361ca564/Tottenham-Hotspur-Stats\"       \n [9] \"https://fbref.com/en/squads/cd051869/Brentford-Stats\"               \n[10] \"https://fbref.com/en/squads/fd962109/Fulham-Stats\"                  \n[11] \"https://fbref.com/en/squads/4ba7cbea/Bournemouth-Stats\"             \n[12] \"https://fbref.com/en/squads/b2b47a98/Newcastle-United-Stats\"        \n[13] \"https://fbref.com/en/squads/7c21e445/West-Ham-United-Stats\"         \n[14] \"https://fbref.com/en/squads/19538871/Manchester-United-Stats\"       \n[15] \"https://fbref.com/en/squads/a2d435b3/Leicester-City-Stats\"          \n[16] \"https://fbref.com/en/squads/d3fd31cc/Everton-Stats\"                 \n[17] \"https://fbref.com/en/squads/47c64c55/Crystal-Palace-Stats\"          \n[18] \"https://fbref.com/en/squads/b74092de/Ipswich-Town-Stats\"            \n[19] \"https://fbref.com/en/squads/8cec06e1/Wolverhampton-Wanderers-Stats\" \n[20] \"https://fbref.com/en/squads/33c895d4/Southampton-Stats\"",
+    "objectID": "worldfootballr-fbref-scores.html#match-results-function",
+    "href": "worldfootballr-fbref-scores.html#match-results-function",
+    "title": "FBref scores & schedules",
+    "section": "Match results function",
+    "text": "Match results function\nThis is our jam.\nMatch results\n\nmls_2024 &lt;- fb_match_results(\n  country = \"USA\",\n  gender = \"M\",\n  season_end_year = 2023,\n  tier = \"1st\"\n) |&gt; clean_names()\n\nmls_2024",
     "crumbs": [
-      "FBRef team stats"
+      "FBref scores & schedules"
     ]
   },
   {
-    "objectID": "worldfootballr-fbref-teamstats.html#looking-for-goals",
-    "href": "worldfootballr-fbref-teamstats.html#looking-for-goals",
-    "title": "FBRef team stats",
-    "section": "Looking for goals",
-    "text": "Looking for goals\nA goal for a student was to find how many goal teams scored throughout seasons to see if there are generally more.\n\nBig 5 Leagues\nExploring functions that will get goals by team each season.\nThis gets “standard” team stats from all big 5 European leagues using fb_big5_advanced_season_stats()\n\nbig5_stand_21 &lt;- fb_big5_advanced_season_stats(\n  season_end_year=2021,\n  stat_type=\"standard\",\n  team_or_player=\"team\",\n  time_pause = 3) |&gt;\n  clean_names()\n\nbig5_stand_21 |&gt; glimpse()\n\nRows: 196\nColumns: 36\n$ season_end_year     &lt;int&gt; 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, 20…\n$ squad               &lt;chr&gt; \"Alavés\", \"Alavés\", \"Angers\", \"Angers\", \"Arminia\",…\n$ comp                &lt;chr&gt; \"La Liga\", \"La Liga\", \"Ligue 1\", \"Ligue 1\", \"Bunde…\n$ team_or_opponent    &lt;chr&gt; \"team\", \"opponent\", \"team\", \"opponent\", \"team\", \"o…\n$ num_players         &lt;dbl&gt; 30, 30, 31, 31, 26, 26, 29, 29, 24, 24, 30, 30, 27…\n$ age                 &lt;dbl&gt; 28.7, 27.5, 27.9, 26.0, 26.0, 25.9, 25.9, 26.7, 25…\n$ poss                &lt;dbl&gt; 42.8, 57.3, 46.4, 53.8, 42.3, 57.8, 53.5, 46.2, 48…\n$ mp_playing          &lt;dbl&gt; 38, 38, 38, 38, 34, 34, 38, 38, 38, 38, 38, 38, 38…\n$ starts_playing      &lt;dbl&gt; 418, 418, 418, 418, 374, 374, 418, 418, 418, 418, …\n$ min_playing         &lt;dbl&gt; 3420, 3420, 3420, 3420, 3060, 3060, 3420, 3420, 34…\n$ mins_per_90_playing &lt;dbl&gt; 38, 38, 38, 38, 34, 34, 38, 38, 38, 38, 38, 38, 38…\n$ gls                 &lt;dbl&gt; 35, 57, 40, 57, 23, 51, 53, 35, 52, 45, 90, 46, 43…\n$ ast                 &lt;dbl&gt; 21, 44, 23, 41, 16, 36, 38, 25, 38, 30, 65, 36, 31…\n$ g_a                 &lt;dbl&gt; 56, 101, 63, 98, 39, 87, 91, 60, 90, 75, 155, 82, …\n$ g_minus_pk          &lt;dbl&gt; 30, 54, 35, 50, 22, 46, 47, 33, 47, 40, 84, 41, 39…\n$ pk                  &lt;dbl&gt; 5, 3, 5, 7, 1, 5, 6, 2, 5, 5, 6, 5, 4, 5, 5, 1, 2,…\n$ p_katt              &lt;dbl&gt; 8, 3, 6, 8, 2, 6, 6, 3, 6, 6, 7, 8, 5, 6, 7, 4, 5,…\n$ crd_y               &lt;dbl&gt; 96, 80, 65, 73, 52, 63, 49, 74, 71, 73, 67, 87, 82…\n$ crd_r               &lt;dbl&gt; 8, 3, 2, 3, 1, 2, 5, 2, 4, 7, 3, 4, 3, 5, 0, 3, 4,…\n$ x_g_expected        &lt;dbl&gt; 42.6, 49.9, 41.6, 52.3, 32.9, 56.8, 51.7, 43.0, 52…\n$ npx_g_expected      &lt;dbl&gt; 36.4, 47.5, 36.9, 46.6, 31.3, 52.1, 47.0, 40.6, 47…\n$ x_ag_expected       &lt;dbl&gt; 27.4, 37.1, 26.4, 36.8, 23.9, 40.6, 35.1, 31.8, 37…\n$ npx_g_x_ag_expected &lt;dbl&gt; 63.7, 84.7, 63.3, 83.4, 55.2, 92.7, 82.1, 72.4, 85…\n$ prg_c_progression   &lt;dbl&gt; 404, 631, 614, 731, 358, 597, 758, 604, 629, 726, …\n$ prg_p_progression   &lt;dbl&gt; 938, 1477, 1435, 1639, 880, 1706, 1760, 1175, 1420…\n$ gls_per             &lt;dbl&gt; 0.92, 1.50, 1.05, 1.50, 0.68, 1.50, 1.39, 0.92, 1.…\n$ ast_per             &lt;dbl&gt; 0.55, 1.16, 0.61, 1.08, 0.47, 1.06, 1.00, 0.66, 1.…\n$ g_a_per             &lt;dbl&gt; 1.47, 2.66, 1.66, 2.58, 1.15, 2.56, 2.39, 1.58, 2.…\n$ g_minus_pk_per      &lt;dbl&gt; 0.79, 1.42, 0.92, 1.32, 0.65, 1.35, 1.24, 0.87, 1.…\n$ g_a_minus_pk_per    &lt;dbl&gt; 1.34, 2.58, 1.53, 2.39, 1.12, 2.41, 2.24, 1.53, 2.…\n$ x_g_per             &lt;dbl&gt; 1.12, 1.31, 1.10, 1.38, 0.97, 1.67, 1.36, 1.13, 1.…\n$ x_ag_per            &lt;dbl&gt; 0.72, 0.98, 0.70, 0.97, 0.70, 1.19, 0.92, 0.84, 0.…\n$ x_g_x_ag_per        &lt;dbl&gt; 1.84, 2.29, 1.79, 2.34, 1.67, 2.86, 2.29, 1.97, 2.…\n$ npx_g_per           &lt;dbl&gt; 0.96, 1.25, 0.97, 1.23, 0.92, 1.53, 1.24, 1.07, 1.…\n$ npx_g_x_ag_per      &lt;dbl&gt; 1.68, 2.23, 1.67, 2.19, 1.62, 2.73, 2.16, 1.91, 2.…\n$ url                 &lt;chr&gt; \"https://fbref.com/en/squads/8d6fd021/2020-2021/Al…\n\nbig5_stand_21 |&gt; write_rds(\"data-raw/fbref-team-stats/big5_stand_2021.rds\")\n\nMy suggestion would be to save the above table as a .rds file to a computer so you don’t have to hit the website everytime you work with it.\nThat big5 could then then be filtered to a specific league.\n\nbig5_stand_21 |&gt; filter(comp == \"Premier League\") |&gt; filter(team_or_opponent == \"team\")\n\n\n  \n\n\n\n\nFunctionalize this\nThere idea is I could take what is above and turn it into a function and swap out the years.\n\n# you could update the start, end year here\n# I would not do more than maybe 5 years at a time\nyrs &lt;- 2020:2022\n\nscrape_big5 &lt;- function(yr) {\n  fb_big5_advanced_season_stats(\n  season_end_year=yr,\n  stat_type=\"standard\",\n  team_or_player=\"team\",\n  time_pause = 3) |&gt;\n  clean_names()\n}\n\nfor (i in yrs) {\n  big5_stand &lt;- scrape_big5(i)\n  big5_stand |&gt; write_rds(paste0(\"data-raw/fbref-team-stats/big5_stand_\", i, \".rds\"))\n}\n\n\n\n\nSpecific league\nThis is same as big_5 but for specific leagues. Here we get Premier League. using fb_season_team_stats().\n\nfb_season_team_stats(\"ENG\", \"M\", 2021, \"1st\", \"standard\", time_pause = 3)\n\n\n  \n\n\n\nAgain, this could be turned into a function and sent through a range of years if you just wanted one league. Just like the one above.\n\n\nGoal logs\nInteresting information about goals. This function is described here: fb_team_goal_logs(). What I don’t know is how to get different years.\n\nteam_urls &lt;- c(\"https://fbref.com/en/squads/b8fd03ef/Manchester-City-Stats\", \"https://fbref.com/en/squads/822bd0ba/Liverpool-Stats\")\n\nfb_team_goal_logs(team_urls = team_urls, for_or_against = \"for\", time_pause = 3)",
+    "objectID": "worldfootballr-fbref-scores.html#austin-sellout",
+    "href": "worldfootballr-fbref-scores.html#austin-sellout",
+    "title": "FBref scores & schedules",
+    "section": "Austin sellout?",
+    "text": "Austin sellout?\nInterestingly, there is no Attendance reported for the final Austin FC home game in 2024.\n\nmls_2024 |&gt; \n  filter(home == \"Austin\")\n\n\n  \n\n\n\n\nmls_2024 |&gt; filter(is.na(attendance), round == \"Regular Season\") |&gt; \n  select(round, wk, date, home, away, attendance, venue) |&gt; \n  arrange(date)",
     "crumbs": [
-      "FBRef team stats"
-    ]
-  },
-  {
-    "objectID": "worldfootballr-fbref-players.html",
-    "href": "worldfootballr-fbref-players.html",
-    "title": "FBref Big 5 player stats",
-    "section": "",
-    "text": "Getting standard player stats. Goal is to look into cards.",
-    "crumbs": [
-      "FBref Big 5 player stats"
-    ]
-  },
-  {
-    "objectID": "worldfootballr-fbref-players.html#setup",
-    "href": "worldfootballr-fbref-players.html#setup",
-    "title": "FBref Big 5 player stats",
-    "section": "Setup",
-    "text": "Setup\n\nlibrary(tidyverse)\nlibrary(janitor)\nlibrary(worldfootballR)",
-    "crumbs": [
-      "FBref Big 5 player stats"
-    ]
-  },
-  {
-    "objectID": "worldfootballr-fbref-players.html#player-stats",
-    "href": "worldfootballr-fbref-players.html#player-stats",
-    "title": "FBref Big 5 player stats",
-    "section": "Player stats",
-    "text": "Player stats\nThis is for all players in European top flight leagues for one year.\n\nbig5_player_stats_21 &lt;- fb_big5_advanced_season_stats(\n  season_end_year=2021,\n  stat_type=\"standard\",\n  team_or_player=\"player\",\n  time_pause = 3) |&gt;\n  clean_names()\n\n\nbig5_player_stats_21\n\n\n  \n\n\n\nThat result could be treated like Team stats and turned into a function to download multiple years.",
-    "crumbs": [
-      "FBref Big 5 player stats"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Sports Dataverse Examples",
-    "section": "",
-    "text": "An increasing number of students are interested in sports data, so I want to learn more about different R packages that help gather that data.\nSome of these are within the Sports Dataverse, but I’m also finding that some of those packages do not work.\n\nSee the site navigation for the different examples I have.\n\nSome I’ve had some success with:\n\nworldfootballR for world soccer.\nbaseballR for baseball.\n\nSome I’ve seen work in the past but I haven’t used recently:\n\nrecruitR for college sports recruits.\ncfbfastR for college football stats. Requires an API key.\n\nSome that have NOT worked:\n\nusfootballR but that information seems to be available in worldfootballR",
-    "crumbs": [
-      "Home"
+      "FBref scores & schedules"
     ]
   },
   {
@@ -154,43 +110,153 @@
     ]
   },
   {
-    "objectID": "worldfootballr-fbref-scores.html",
-    "href": "worldfootballr-fbref-scores.html",
-    "title": "FBref scores & schedules",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sports Dataverse Examples",
     "section": "",
-    "text": "The aim is to pull data from a page like this: 2023 Scores and Fixtures\nthis uses the worldfootballr package and mainly the fb_match_results",
+    "text": "An increasing number of students are interested in sports data, so I want to learn more about different R packages that help gather that data.\nSome of these are within the Sports Dataverse, but I’m also finding that some of those packages do not work.\n\nSee the site navigation for the different examples I have.\n\nSome I’ve had some success with:\n\nworldfootballR for world soccer.\nbaseballR for baseball.\n\nSome I’ve seen work in the past but I haven’t used recently:\n\nrecruitR for college sports recruits.\ncfbfastR for college football stats. Requires an API key.\n\nSome that have NOT worked:\n\nusfootballR but that information seems to be available in worldfootballR",
     "crumbs": [
-      "FBref scores & schedules"
+      "Home"
     ]
   },
   {
-    "objectID": "worldfootballr-fbref-scores.html#setup",
-    "href": "worldfootballr-fbref-scores.html#setup",
-    "title": "FBref scores & schedules",
+    "objectID": "worldfootballr-fbref-players.html",
+    "href": "worldfootballr-fbref-players.html",
+    "title": "FBref Big 5 player stats",
+    "section": "",
+    "text": "Getting standard player stats. Goal is to look into cards.",
+    "crumbs": [
+      "FBref Big 5 player stats"
+    ]
+  },
+  {
+    "objectID": "worldfootballr-fbref-players.html#setup",
+    "href": "worldfootballr-fbref-players.html#setup",
+    "title": "FBref Big 5 player stats",
     "section": "Setup",
     "text": "Setup\n\nlibrary(tidyverse)\nlibrary(janitor)\nlibrary(worldfootballR)",
     "crumbs": [
-      "FBref scores & schedules"
+      "FBref Big 5 player stats"
     ]
   },
   {
-    "objectID": "worldfootballr-fbref-scores.html#match-results-function",
-    "href": "worldfootballr-fbref-scores.html#match-results-function",
-    "title": "FBref scores & schedules",
-    "section": "Match results function",
-    "text": "Match results function\nThis is our jam.\nMatch results\n\nmls_2024 &lt;- fb_match_results(\n  country = \"USA\",\n  gender = \"M\",\n  season_end_year = 2023,\n  tier = \"1st\"\n) |&gt; clean_names()\n\nmls_2024",
+    "objectID": "worldfootballr-fbref-players.html#player-stats",
+    "href": "worldfootballr-fbref-players.html#player-stats",
+    "title": "FBref Big 5 player stats",
+    "section": "Player stats",
+    "text": "Player stats\nThis is for all players in European top flight leagues for one year.\n\nbig5_player_stats_21 &lt;- fb_big5_advanced_season_stats(\n  season_end_year=2021,\n  stat_type=\"standard\",\n  team_or_player=\"player\",\n  time_pause = 3) |&gt;\n  clean_names()\n\n\nbig5_player_stats_21\n\n\n  \n\n\n\nThat result could be treated like Team stats and turned into a function to download multiple years.",
     "crumbs": [
-      "FBref scores & schedules"
+      "FBref Big 5 player stats"
     ]
   },
   {
-    "objectID": "worldfootballr-fbref-scores.html#austin-sellout",
-    "href": "worldfootballr-fbref-scores.html#austin-sellout",
-    "title": "FBref scores & schedules",
-    "section": "Austin sellout?",
-    "text": "Austin sellout?\nInterestingly, there is no Attendance reported for the final Austin FC home game in 2024.\n\nmls_2024 |&gt; \n  filter(home == \"Austin\")\n\n\n  \n\n\n\n\nmls_2024 |&gt; filter(is.na(attendance), round == \"Regular Season\") |&gt; \n  select(round, wk, date, home, away, attendance, venue) |&gt; \n  arrange(date)",
+    "objectID": "worldfootballr-fbref-teamstats.html",
+    "href": "worldfootballr-fbref-teamstats.html",
+    "title": "FBRef team stats",
+    "section": "",
+    "text": "Exploring the worldfootballR package where you can get soccer stats from FBref.com and more.\nHere we are trying to get goals by team for a season, which are in the standard season ending team stats.",
     "crumbs": [
-      "FBref scores & schedules"
+      "FBRef team stats"
+    ]
+  },
+  {
+    "objectID": "worldfootballr-fbref-teamstats.html#install-the-packages",
+    "href": "worldfootballr-fbref-teamstats.html#install-the-packages",
+    "title": "FBRef team stats",
+    "section": "Install the packages",
+    "text": "Install the packages\nIf you don’t already have the devtools and worldfootballR packages, uncomment the code below to install them. HOWEVER, recomment after you’ve done so. You only have to install the packages ONE TIME.\n\n# install.packages(\"devtools\")\n# devtools::install_github(\"JaseZiv/worldfootballR\")",
+    "crumbs": [
+      "FBRef team stats"
+    ]
+  },
+  {
+    "objectID": "worldfootballr-fbref-teamstats.html#setup",
+    "href": "worldfootballr-fbref-teamstats.html#setup",
+    "title": "FBRef team stats",
+    "section": "Setup",
+    "text": "Setup\n\nlibrary(tidyverse)\nlibrary(janitor)\nlibrary(worldfootballR)",
+    "crumbs": [
+      "FBRef team stats"
+    ]
+  },
+  {
+    "objectID": "worldfootballr-fbref-teamstats.html#basic-use",
+    "href": "worldfootballr-fbref-teamstats.html#basic-use",
+    "title": "FBRef team stats",
+    "section": "Basic use",
+    "text": "Basic use\nAn attempt to learn how to do certain things.\nThis gets the URL for specific leagues and years.\nThe function is described here: fb_league_urls()\n\nfb_league_urls(country = \"ENG\", gender = \"M\", season_end_year = 2021, tier = '1st')\n\n[1] \"https://fbref.com/en/comps/9/2020-2021/2020-2021-Premier-League-Stats\"\n\n\nWhich then lets you get team urls:\nThis function is described here. fb_teams_urls()\n\nfb_teams_urls(\"https://fbref.com/en/comps/9/Premier-League-Stats\")\n\n [1] \"https://fbref.com/en/squads/822bd0ba/Liverpool-Stats\"               \n [2] \"https://fbref.com/en/squads/18bb7c10/Arsenal-Stats\"                 \n [3] \"https://fbref.com/en/squads/e4a775cb/Nottingham-Forest-Stats\"       \n [4] \"https://fbref.com/en/squads/cff3d9bb/Chelsea-Stats\"                 \n [5] \"https://fbref.com/en/squads/b8fd03ef/Manchester-City-Stats\"         \n [6] \"https://fbref.com/en/squads/b2b47a98/Newcastle-United-Stats\"        \n [7] \"https://fbref.com/en/squads/d07537b9/Brighton-and-Hove-Albion-Stats\"\n [8] \"https://fbref.com/en/squads/fd962109/Fulham-Stats\"                  \n [9] \"https://fbref.com/en/squads/8602292d/Aston-Villa-Stats\"             \n[10] \"https://fbref.com/en/squads/4ba7cbea/Bournemouth-Stats\"             \n[11] \"https://fbref.com/en/squads/cd051869/Brentford-Stats\"               \n[12] \"https://fbref.com/en/squads/47c64c55/Crystal-Palace-Stats\"          \n[13] \"https://fbref.com/en/squads/19538871/Manchester-United-Stats\"       \n[14] \"https://fbref.com/en/squads/361ca564/Tottenham-Hotspur-Stats\"       \n[15] \"https://fbref.com/en/squads/d3fd31cc/Everton-Stats\"                 \n[16] \"https://fbref.com/en/squads/7c21e445/West-Ham-United-Stats\"         \n[17] \"https://fbref.com/en/squads/8cec06e1/Wolverhampton-Wanderers-Stats\" \n[18] \"https://fbref.com/en/squads/b74092de/Ipswich-Town-Stats\"            \n[19] \"https://fbref.com/en/squads/a2d435b3/Leicester-City-Stats\"          \n[20] \"https://fbref.com/en/squads/33c895d4/Southampton-Stats\"",
+    "crumbs": [
+      "FBRef team stats"
+    ]
+  },
+  {
+    "objectID": "worldfootballr-fbref-teamstats.html#looking-for-goals",
+    "href": "worldfootballr-fbref-teamstats.html#looking-for-goals",
+    "title": "FBRef team stats",
+    "section": "Looking for goals",
+    "text": "Looking for goals\nA goal for a student was to find how many goal teams scored throughout seasons to see if there are generally more.\n\nBig 5 Leagues\nExploring functions that will get goals by team each season.\nThis gets “standard” team stats from all big 5 European leagues using fb_big5_advanced_season_stats()\n\nbig5_stand_21 &lt;- fb_big5_advanced_season_stats(\n  season_end_year=2021,\n  stat_type=\"standard\",\n  team_or_player=\"team\",\n  time_pause = 3) |&gt;\n  clean_names()\n\nbig5_stand_21 |&gt; glimpse()\n\nRows: 196\nColumns: 36\n$ season_end_year     &lt;int&gt; 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, 20…\n$ squad               &lt;chr&gt; \"Alavés\", \"Alavés\", \"Angers\", \"Angers\", \"Arminia\",…\n$ comp                &lt;chr&gt; \"La Liga\", \"La Liga\", \"Ligue 1\", \"Ligue 1\", \"Bunde…\n$ team_or_opponent    &lt;chr&gt; \"team\", \"opponent\", \"team\", \"opponent\", \"team\", \"o…\n$ num_players         &lt;dbl&gt; 30, 30, 31, 31, 26, 26, 29, 29, 24, 24, 30, 30, 27…\n$ age                 &lt;dbl&gt; 28.7, 27.5, 27.9, 26.0, 26.0, 25.9, 25.9, 26.7, 25…\n$ poss                &lt;dbl&gt; 42.8, 57.3, 46.4, 53.8, 42.3, 57.8, 53.5, 46.2, 48…\n$ mp_playing          &lt;dbl&gt; 38, 38, 38, 38, 34, 34, 38, 38, 38, 38, 38, 38, 38…\n$ starts_playing      &lt;dbl&gt; 418, 418, 418, 418, 374, 374, 418, 418, 418, 418, …\n$ min_playing         &lt;dbl&gt; 3420, 3420, 3420, 3420, 3060, 3060, 3420, 3420, 34…\n$ mins_per_90_playing &lt;dbl&gt; 38, 38, 38, 38, 34, 34, 38, 38, 38, 38, 38, 38, 38…\n$ gls                 &lt;dbl&gt; 35, 57, 40, 57, 23, 51, 53, 35, 52, 45, 90, 46, 43…\n$ ast                 &lt;dbl&gt; 21, 44, 23, 41, 16, 36, 38, 25, 38, 30, 65, 36, 31…\n$ g_a                 &lt;dbl&gt; 56, 101, 63, 98, 39, 87, 91, 60, 90, 75, 155, 82, …\n$ g_minus_pk          &lt;dbl&gt; 30, 54, 35, 50, 22, 46, 47, 33, 47, 40, 84, 41, 39…\n$ pk                  &lt;dbl&gt; 5, 3, 5, 7, 1, 5, 6, 2, 5, 5, 6, 5, 4, 5, 5, 1, 2,…\n$ p_katt              &lt;dbl&gt; 8, 3, 6, 8, 2, 6, 6, 3, 6, 6, 7, 8, 5, 6, 7, 4, 5,…\n$ crd_y               &lt;dbl&gt; 96, 80, 65, 73, 52, 63, 49, 74, 71, 73, 67, 87, 82…\n$ crd_r               &lt;dbl&gt; 8, 3, 2, 3, 1, 2, 5, 2, 4, 7, 3, 4, 3, 5, 0, 3, 4,…\n$ x_g_expected        &lt;dbl&gt; 42.6, 49.9, 41.6, 52.3, 32.9, 56.8, 51.7, 43.0, 52…\n$ npx_g_expected      &lt;dbl&gt; 36.4, 47.5, 36.9, 46.6, 31.3, 52.1, 47.0, 40.6, 47…\n$ x_ag_expected       &lt;dbl&gt; 27.4, 37.1, 26.4, 36.8, 23.9, 40.6, 35.1, 31.8, 37…\n$ npx_g_x_ag_expected &lt;dbl&gt; 63.7, 84.7, 63.3, 83.4, 55.2, 92.7, 82.1, 72.4, 85…\n$ prg_c_progression   &lt;dbl&gt; 404, 631, 614, 731, 358, 597, 758, 604, 629, 726, …\n$ prg_p_progression   &lt;dbl&gt; 938, 1477, 1435, 1639, 880, 1706, 1760, 1175, 1420…\n$ gls_per             &lt;dbl&gt; 0.92, 1.50, 1.05, 1.50, 0.68, 1.50, 1.39, 0.92, 1.…\n$ ast_per             &lt;dbl&gt; 0.55, 1.16, 0.61, 1.08, 0.47, 1.06, 1.00, 0.66, 1.…\n$ g_a_per             &lt;dbl&gt; 1.47, 2.66, 1.66, 2.58, 1.15, 2.56, 2.39, 1.58, 2.…\n$ g_minus_pk_per      &lt;dbl&gt; 0.79, 1.42, 0.92, 1.32, 0.65, 1.35, 1.24, 0.87, 1.…\n$ g_a_minus_pk_per    &lt;dbl&gt; 1.34, 2.58, 1.53, 2.39, 1.12, 2.41, 2.24, 1.53, 2.…\n$ x_g_per             &lt;dbl&gt; 1.12, 1.31, 1.10, 1.38, 0.97, 1.67, 1.36, 1.13, 1.…\n$ x_ag_per            &lt;dbl&gt; 0.72, 0.98, 0.70, 0.97, 0.70, 1.19, 0.92, 0.84, 0.…\n$ x_g_x_ag_per        &lt;dbl&gt; 1.84, 2.29, 1.79, 2.34, 1.67, 2.86, 2.29, 1.97, 2.…\n$ npx_g_per           &lt;dbl&gt; 0.96, 1.25, 0.97, 1.23, 0.92, 1.53, 1.24, 1.07, 1.…\n$ npx_g_x_ag_per      &lt;dbl&gt; 1.68, 2.23, 1.67, 2.19, 1.62, 2.73, 2.16, 1.91, 2.…\n$ url                 &lt;chr&gt; \"https://fbref.com/en/squads/8d6fd021/2020-2021/Al…\n\nbig5_stand_21 |&gt; write_rds(\"data-raw/fbref-team-stats/big5_stand_2021.rds\")\n\nMy suggestion would be to save the above table as a .rds file to a computer so you don’t have to hit the website everytime you work with it.\nThat big5 could then then be filtered to a specific league.\n\nbig5_stand_21 |&gt; filter(comp == \"Premier League\") |&gt; filter(team_or_opponent == \"team\")\n\n\n  \n\n\n\n\nFunctionalize this\nThere idea is I could take what is above and turn it into a function and swap out the years.\n\n# you could update the start, end year here\n# I would not do more than maybe 5 years at a time\nyrs &lt;- 2020:2022\n\nscrape_big5 &lt;- function(yr) {\n  fb_big5_advanced_season_stats(\n  season_end_year=yr,\n  stat_type=\"standard\",\n  team_or_player=\"team\",\n  time_pause = 3) |&gt;\n  clean_names()\n}\n\nfor (i in yrs) {\n  big5_stand &lt;- scrape_big5(i)\n  big5_stand |&gt; write_rds(paste0(\"data-raw/fbref-team-stats/big5_stand_\", i, \".rds\"))\n}\n\n\n\n\nSpecific league\nThis is same as big_5 but for specific leagues. Here we get Premier League. using fb_season_team_stats().\n\nfb_season_team_stats(\"ENG\", \"M\", 2021, \"1st\", \"standard\", time_pause = 3)\n\n\n  \n\n\n\nAgain, this could be turned into a function and sent through a range of years if you just wanted one league. Just like the one above.\n\n\nGoal logs\nInteresting information about goals. This function is described here: fb_team_goal_logs(). What I don’t know is how to get different years.\n\nteam_urls &lt;- c(\"https://fbref.com/en/squads/b8fd03ef/Manchester-City-Stats\", \"https://fbref.com/en/squads/822bd0ba/Liverpool-Stats\")\n\nfb_team_goal_logs(team_urls = team_urls, for_or_against = \"for\", time_pause = 3)",
+    "crumbs": [
+      "FBRef team stats"
+    ]
+  },
+  {
+    "objectID": "nascar.html",
+    "href": "nascar.html",
+    "title": "nascar.data",
+    "section": "",
+    "text": "An exploration of the nascar.data package.",
+    "crumbs": [
+      "nascar.data"
+    ]
+  },
+  {
+    "objectID": "nascar.html#setup",
+    "href": "nascar.html#setup",
+    "title": "nascar.data",
+    "section": "Setup",
+    "text": "Setup\n\nlibrary(tidyverse)\nlibrary(janitor)\nlibrary(nascaR.data)",
+    "crumbs": [
+      "nascar.data"
+    ]
+  },
+  {
+    "objectID": "nascar.html#data-functions",
+    "href": "nascar.html#data-functions",
+    "title": "nascar.data",
+    "section": "Data functions",
+    "text": "Data functions\n\nCup Series\n\ncup_series |&gt; glimpse()\n\nRows: 98,769\nColumns: 20\n$ Season  &lt;int&gt; 1949, 1949, 1949, 1949, 1949, 1949, 1949, 1949, 1949, 1949, 19…\n$ Race    &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…\n$ Track   &lt;chr&gt; \"Charlotte Speedway\", \"Charlotte Speedway\", \"Charlotte Speedwa…\n$ Name    &lt;chr&gt; \"150 Miles at Charlotte Speedway\", \"150 Miles at Charlotte Spe…\n$ Length  &lt;dbl&gt; 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.…\n$ Surface &lt;chr&gt; \"dirt\", \"dirt\", \"dirt\", \"dirt\", \"dirt\", \"dirt\", \"dirt\", \"dirt\"…\n$ Finish  &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,…\n$ Start   &lt;int&gt; 12, 5, 3, 14, 2, NA, NA, NA, 6, NA, NA, 8, NA, 13, NA, NA, 9, …\n$ Car     &lt;chr&gt; \"34\", \"47\", \"22\", \"2\", \"90\", \"\", \"31\", \"28\", \"41\", \"36\", \"87\",…\n$ Driver  &lt;chr&gt; \"Jim Roper\", \"Fonty Flock\", \"Red Byron\", \"Sam Rice\", \"Tim Floc…\n$ Make    &lt;chr&gt; \"Lincoln\", \"Hudson\", \"Oldsmobile\", \"Oldsmobile\", \"Oldsmobile\",…\n$ Pts     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n$ Laps    &lt;int&gt; 197, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 150, NA, NA, NA, …\n$ Led     &lt;int&gt; 47, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 145, 0, 0, 0, 0, 0, 0, 0, 0,…\n$ Status  &lt;chr&gt; \"running\", \"running\", \"running\", \"running\", \"running\", \"-\", \"-…\n$ Team    &lt;chr&gt; \"R.B. McIntosh (Owner)\", \"Grady Cole (Owner)\", \"Raymond Parks …\n$ S1      &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n$ S2      &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n$ Rating  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n$ Win     &lt;dbl&gt; 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…\n\n\n\ncup_series |&gt; head()\n\n\n  \n\n\n\n\n\nXfinity Series\n\nxfinity_series |&gt; glimpse()\n\nRows: 52,948\nColumns: 20\n$ Season  &lt;int&gt; 1982, 1982, 1982, 1982, 1982, 1982, 1982, 1982, 1982, 1982, 19…\n$ Race    &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…\n$ Track   &lt;chr&gt; \"Daytona International Speedway\", \"Daytona International Speed…\n$ Name    &lt;chr&gt; \"Goody's 300\", \"Goody's 300\", \"Goody's 300\", \"Goody's 300\", \"G…\n$ Length  &lt;dbl&gt; 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.…\n$ Surface &lt;chr&gt; \"paved\", \"paved\", \"paved\", \"paved\", \"paved\", \"paved\", \"paved\",…\n$ Finish  &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,…\n$ Start   &lt;int&gt; 5, 3, 4, 33, 2, 9, 1, 7, 23, 20, 19, 13, 24, 14, 16, 34, 27, 2…\n$ Car     &lt;chr&gt; \"15\", \"98\", \"00\", \"75\", \"99\", \"77\", \"3\", \"28\", \"27\", \"24\", \"04…\n$ Driver  &lt;chr&gt; \"Dale Earnhardt\", \"Jody Ridley\", \"Sam Ard\", \"Gary Balough\", \"G…\n$ Make    &lt;chr&gt; \"Pontiac\", \"Pontiac\", \"Oldsmobile\", \"Pontiac\", \"Pontiac\", \"Pon…\n$ Pts     &lt;int&gt; 180, 170, 165, 160, 155, 150, 146, 142, 138, 134, 130, 127, 12…\n$ Laps    &lt;int&gt; 120, 120, 120, 120, 120, 119, 119, 118, 116, 116, 116, 116, 11…\n$ Led     &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…\n$ Status  &lt;chr&gt; \"running\", \"running\", \"running\", \"running\", \"running\", \"runnin…\n$ Team    &lt;chr&gt; \"Robert Gee (Owner)\", \"\", \"Thomas Brothers Racing\", \"Butch Moc…\n$ S1      &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n$ S2      &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n$ Rating  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n$ Win     &lt;dbl&gt; 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…\n\n\n\n\nTruck Series\n\ntruck_series",
+    "crumbs": [
+      "nascar.data"
+    ]
+  },
+  {
+    "objectID": "nascar.html#info-functions",
+    "href": "nascar.html#info-functions",
+    "title": "nascar.data",
+    "section": "Info functions",
+    "text": "Info functions\n\nDriver\n\nget_driver_info(\"Kyle Busch\", series = \"all\", type = \"summary\")\n\nKyle Busch\n\n\n\n  \n\n\n\n\n\nTeam\n\nget_team_info(\"Joe Gibbs Racing\", series = \"truck\", type = \"season\")\n\nJoe Gibbs Racing\n\n\n\n  \n\n\n\n\n\nManufacturer\n\nget_manufacturer_info(\"Chevrolet\", series = \"truck\", type = \"season\")\n\nChevrolet",
+    "crumbs": [
+      "nascar.data"
+    ]
+  },
+  {
+    "objectID": "nascar.html#lets-look-at-a-race",
+    "href": "nascar.html#lets-look-at-a-race",
+    "title": "nascar.data",
+    "section": "Let’s look at a race",
+    "text": "Let’s look at a race\nFirst, let’s get the 2024 Cup Season\n\nc2024 &lt;- cup_series |&gt; clean_names() |&gt; filter(season == 2024)\n\nA look at the races, tracks\n\nc2024 |&gt; \n  count(race, track)\n\n\n  \n\n\n\nAnd a single race. What do we get?\n\nc2024 |&gt; \n  filter(race == 1)",
+    "crumbs": [
+      "nascar.data"
+    ]
+  },
+  {
+    "objectID": "nascar.html#prompt-ideas",
+    "href": "nascar.html#prompt-ideas",
+    "title": "nascar.data",
+    "section": "Prompt ideas",
+    "text": "Prompt ideas\n\nhow does start position affect finish?\nwho might have led the fewest laps before winning?\nwho has been in the most crashes?\nWhat is the average finish by make?\nWho is the best road racer?\nWho might be the best driver in multiple series?\nWhat is the rating?\nWhich team has been most successful?\n\nHow do you even measure that?",
+    "crumbs": [
+      "nascar.data"
     ]
   }
 ]

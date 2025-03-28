@@ -1,0 +1,103 @@
+---
+title: "nascar.data"
+format: html
+---
+
+An exploration of the [nascar.data](https://azimuth-project.tech/nascaR.data/index.html) package.
+
+## Setup
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(janitor)
+library(nascaR.data)
+```
+
+
+## Data functions
+
+### Cup Series
+
+
+```{r}
+cup_series |> glimpse()
+```
+
+```{r}
+cup_series |> head()
+```
+
+
+### Xfinity Series
+
+```{r}
+xfinity_series |> glimpse()
+```
+
+### Truck Series
+
+```{r}
+truck_series
+```
+
+
+## Info functions
+
+### Driver
+
+```{r}
+get_driver_info("Kyle Busch", series = "all", type = "summary")
+```
+
+
+### Team
+
+```{r}
+get_team_info("Joe Gibbs Racing", series = "truck", type = "season")
+```
+
+
+### Manufacturer
+
+```{r}
+get_manufacturer_info("Chevrolet", series = "truck", type = "season")
+```
+
+## Let's look at a race
+
+First, let's get the 2024 Cup Season
+
+```{r}
+c2024 <- cup_series |> clean_names() |> filter(season == 2024)
+```
+
+
+A look at the races, tracks
+
+```{r}
+c2024 |> 
+  count(race, track)
+```
+
+And a single race. What do we get?
+
+```{r}
+c2024 |> 
+  filter(race == 1)
+```
+
+## Prompt ideas
+
+- how does start position affect finish?
+- who might have led the fewest laps before winning?
+- who has been in the most crashes?
+- What is the average finish by make?
+- Who is the best road racer?
+- Who might be the best driver in multiple series?
+- What is the rating?
+- Which team has been most successful?
+    - How do you even measure that?

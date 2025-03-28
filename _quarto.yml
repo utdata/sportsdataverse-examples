@@ -3,17 +3,14 @@ project:
   output-dir: docs
 
 website:
-  title: "Sports Dataverse Examples"
+  title: "Sports Data Examples"
   sidebar:
     style: "docked"
     search: true
     contents:
       - href: index.qmd
         text: Home
-      - baseballr.qmd
-      - worldfootballr-fbref-teamstats.qmd
-      - worldfootballr-fbref-players.qmd
-      - worldfootballr-fbref-scores.qmd
+      - auto: "*.qmd"
   repo-url: https://github.com/utdata/sportsdataverse-examples
   repo-actions: [source, issue]
 
